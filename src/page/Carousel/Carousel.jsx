@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Carousel.css';
 import sampahImg from '../../assets/img/sampah/sampah.jpg';
 import pengelolaanImg from '../../assets/img/sampah/Pengelolaan-Limbah-Sampah.jpg';
-import image from '../../assets/img/sampah/images.jpg';
 
 function CarouselSampah() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,11 +18,6 @@ function CarouselSampah() {
       title: 'Daur Ulang Sampah',
       description: 'Membangun lingkungan bersih melalui daur ulang'
     },
-    {
-      src: image,
-      title: 'haiia',
-      description: 'hayehayyuaeygfh'
-    }
     
   ];
 

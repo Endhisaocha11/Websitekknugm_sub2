@@ -5,11 +5,15 @@ import './NavbarComponent.css';
 import TitleLogo from '/title.png';
 
 const NavbarComponent = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top
+  };
+
   return (
-    <Navbar expand="lg" className="navbar-custom">
+    <Navbar expand="lg" className="navbar-custom" fixed="top">
       <Container>
         {/* Logo dan Brand di Kiri */}
-        <Navbar.Brand as={Link} to="/" className="brand-custom">
+        <Navbar.Brand as={Link} to="/" className="brand-custom" onClick={scrollToTop}>
           <img
             src={Logo}
             className="logo-img"
@@ -24,19 +28,16 @@ const NavbarComponent = () => {
         {/* Menu Navigasi di Kanan */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/" className="nav-link-custom">
+            <Nav.Link as={Link} to="/" className="nav-link-custom" onClick={scrollToTop}>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/information" className="nav-link-custom">
+            <Nav.Link as={Link} to="/information" className="nav-link-custom" onClick={scrollToTop}>
               Edukasi
             </Nav.Link>
-            <Nav.Link as={Link} to="/bank-sampah" className="nav-link-custom">
-              Bank Sampah
-            </Nav.Link>
-            <Nav.Link as={Link} to="/kegiatan" className="nav-link-custom">
+            <Nav.Link as={Link} to="/kegiatan" className="nav-link-custom" onClick={scrollToTop}>
               Kegiatan
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact" className="nav-link-custom">
+            <Nav.Link as={Link} to="/contact" className="nav-link-custom" onClick={scrollToTop}>
               Contact
             </Nav.Link>
           </Nav>
