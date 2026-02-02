@@ -26,7 +26,7 @@ const kegiatanData = [
   },
   {
     id: 3,
-    image: "/src/assets/poc.jpg",
+    image: "/src/assets/img/sampah/poc.png",
     icon: "🧪",
     title: "Pengelolaan POC",
     desc: "Pengolahan sampah organik menjadi Pupuk Organik Cair (POC) yang bermanfaat untuk kesuburan tanaman",
@@ -35,7 +35,7 @@ const kegiatanData = [
   },
   {
     id: 4,
-    image: "/src/assets/plastik.jpg",
+    image: "/src/assets/img/sampah/PenguranganPlastik.png",
     icon: "♻️",
     title: "Pengurangan Plastik",
     desc: "Kampanye dan aksi nyata pengurangan penggunaan plastik sekali pakai untuk lingkungan yang lebih bersih",
@@ -161,6 +161,7 @@ const KegiatanSection = () => {
                   style={{
                     background: `linear-gradient(135deg, ${kegiatan.color}, ${kegiatan.color}dd)`,
                   }}
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} // Scroll to the top
                 >
                   <span>Lihat Detail</span>
                   <span className="btn-arrow">→</span>

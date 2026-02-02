@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const imgHidroponik = "/src/assets/Hidroponik.png";
+const imgAlatBahan = "/src/assets/img/sampah/alatbahanhidroponik.jpeg";
 
 const LeafIcon = () => (
   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2e7d32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -126,7 +127,7 @@ export default function HidroponikPage() {
       style={{ position: "fixed", inset: 0, zIndex: 999, background: "rgba(0,0,0,0.85)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24, cursor: "pointer" }}
     >
       <div style={{ position: "relative", maxWidth: "90vw", maxHeight: "85vh" }}>
-        <img src={lightboxImg} alt="zoom" style={{ maxWidth: "100%", maxHeight: "85vh", borderRadius: 12, objectFit: "contain", display: "block" }} />
+        <img src={lightboxImg} alt="zoom" style={{ maxWidth: "70%", maxHeight: "85vh", borderRadius: 12, objectFit: "contain", display: "block", justifyContent: "center", margin: "0 auto" }} />
         <button
           onClick={() => setLightboxImg(null)}
           style={{ position: "absolute", top: 8, right: 8, background: "rgba(0,0,0,0.55)", border: "none", color: "#fff", borderRadius: "50%", width: 32, height: 32, fontSize: 18, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
@@ -294,8 +295,36 @@ export default function HidroponikPage() {
       </div>
 
       {/* ═══════════ ALAT & BAHAN ═══════════ */}
-      <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px" }}>
+      <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px"}}>
         <Divider label="Alat & Bahan" />
+
+        <div>
+          <img
+            src={imgAlatBahan}
+            alt="Alat dan Bahan Pembuatan POC"    
+            onClick={() => setLightboxImg(imgAlatBahan)} // Added lightbox functionality
+            style={{
+              width: "55%",    
+              height: "auto",
+              marginTop: 20,
+              objectFit: "contain",
+              cursor: "pointer",
+              position: "center",
+              textAlign: "center",
+              margin: "0 auto",
+              borderRadius: 12,
+              display: "block",
+              marginBottom: 10,
+              transition: "transform 0.3s",   
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          />
+          <p style={{ fontSize: 10.5, color: "#7a8f7b", textAlign: "center", margin: "0 0 16px", fontStyle: "italic" }}>
+            Klik gambar untuk memperbesar
+          </p>
+        </div>
+
         <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 16 }}>
           <div style={{ background: "linear-gradient(135deg, #1b5e20, #2e7d32)", borderRadius: 18, padding: "20px 24px", color: "#fff" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>

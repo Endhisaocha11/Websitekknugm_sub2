@@ -9,6 +9,14 @@ const NavbarComponent = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top
   };
 
+  const handleNavLinkClick = () => {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    if (navbarToggler && navbarCollapse.classList.contains('show')) {
+      navbarToggler.click(); // Programmatically close the navbar
+    }
+  };
+
   return (
     <Navbar expand="lg" className="navbar-custom" fixed="top">
       <Container>
@@ -28,16 +36,16 @@ const NavbarComponent = () => {
         {/* Menu Navigasi di Kanan */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/" className="nav-link-custom" onClick={scrollToTop}>
+            <Nav.Link as={Link} to="/" className="nav-link-custom" onClick={() => { scrollToTop(); handleNavLinkClick(); }}>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/information" className="nav-link-custom" onClick={scrollToTop}>
+            <Nav.Link as={Link} to="/information" className="nav-link-custom" onClick={() => { scrollToTop(); handleNavLinkClick(); }}>
               Edukasi
             </Nav.Link>
-            <Nav.Link as={Link} to="/kegiatan" className="nav-link-custom" onClick={scrollToTop}>
+            <Nav.Link as={Link} to="/kegiatan" className="nav-link-custom" onClick={() => { scrollToTop(); handleNavLinkClick(); }}>
               Kegiatan
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact" className="nav-link-custom" onClick={scrollToTop}>
+            <Nav.Link as={Link} to="/contact" className="nav-link-custom" onClick={() => { scrollToTop(); handleNavLinkClick(); }}>
               Contact
             </Nav.Link>
           </Nav>

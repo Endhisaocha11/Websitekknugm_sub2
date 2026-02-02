@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const imgHidroponik = "/src/assets/Hidroponik.png";
+const imgPenguranganSampah= "/src/assets/img/sampah/PenguranganSampah.jpg";
 
 const LeafIcon = () => (
   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2e7d32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -9,7 +9,7 @@ const LeafIcon = () => (
   </svg>
 );
 
-export default function HidroponikPage() {
+export default function PengurangansampahPage() {
   const [lightboxImg, setLightboxImg] = useState(null);
   
   // GANTI URL_VIDEO_YOUTUBE dengan link YouTube Anda
@@ -161,9 +161,9 @@ export default function HidroponikPage() {
           {/* Gambar Hidroponik - Responsif dan Tanpa Border */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "16px" }}>
             <img
-              src={imgHidroponik}
-              alt="Hidroponik"
-              onClick={() => setLightboxImg(imgHidroponik)}
+              src={imgPenguranganSampah}
+              alt="Pengurangan Sampah"
+              onClick={() => setLightboxImg(imgPenguranganSampah)}
               style={{
                 maxWidth: "45%", // Make the image smaller
                 height: "auto",

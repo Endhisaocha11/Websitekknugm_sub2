@@ -1,222 +1,358 @@
 /* ==================== FOOTER ==================== */
 .footer {
-  background: var(--dark);
+  position: relative;
+  background: linear-gradient(135deg, #1d7bd9 0%, #1869c9 50%, #1357b8 100%);
   color: white;
-  padding: 4rem 0 2rem;
+  padding: 0;
+  overflow: hidden;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
+/* Wave Effect - at the top of footer using react-wavify */
+.footer-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  line-height: 0;
+  transform: translateY(-99%);
 }
 
-.footer-logo {
+.footer-wave svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wave-path {
+  fill: #1d7bd9;
+  opacity: 0.3;
+}
+
+/* Main Footer Container */
+.footer-main {
+  padding: 2.5rem 0 1.5rem;
+}
+
+/* Horizontal Bar Layout */
+.footer-horizontal-bar {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 0 2rem;
+  flex-wrap: wrap;
 }
 
-.footer-desc {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+/* Brand Section - Left Side */
+.footer-brand-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  min-width: 300px;
 }
 
-.social-links {
+.footer-logo-group {
   display: flex;
   gap: 1rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+.footer-brand-text {
+  flex: 1;
+}
+
+.footer-brand-text h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: white;
+}
+
+.footer-brand-text p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* CTA Button - Center */
+.footer-cta-section {
+  flex-shrink: 0;
+}
+
+.footer-contact-btn {
+  display: inline-block;
+  background: #0099ff;
+  color: white;
+  padding: 0.7rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 153, 255, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.footer-contact-btn:hover {
+  background: #0088ee;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 153, 255, 0.4);
+}
+
+/* Social Links - Right Side */
+.footer-social-section {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .social-link {
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 1.25rem;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  color: white;
+  backdrop-filter: blur(10px);
 }
 
 .social-link:hover {
-  background: var(--primary);
-  transform: translateY(-5px);
+  background: white;
+  color: #1d7bd9;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
-.footer-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0; /* Tambahan untuk remove default padding */
-}
-
-.footer-links li {
-  margin-bottom: 0.75rem;
-}
-
-/* Styling untuk <a> dan <Link> */
-.footer-links a,
-.footer-links a:link,
-.footer-links a:visited {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  transition: color 0.3s;
-  display: inline-block; /* Untuk smooth hover effect */
-}
-
-.footer-links a:hover,
-.footer-links a:active {
-  color: white;
-}
-
+/* Footer Bottom - Copyright */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.25rem 0;
+  margin-top: 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: white;
+  color: #1d7bd9;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  color: rgba(255, 255, 255, 0.7);
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 
-.footer-bottom-links {
-  display: flex;
-  gap: 2rem;
-}
-
-/* Styling untuk <a> dan <Link> di footer bottom */
-.footer-bottom-links a,
-.footer-bottom-links a:link,
-.footer-bottom-links a:visited {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-bottom-links a:hover,
-.footer-bottom-links a:active {
+.scroll-to-top:hover {
+  background: #1d7bd9;
   color: white;
-}
-
-/* Logo Icon Styling */
-.logo-img {
-  width: 60px;
-  height: 60px;
-  background: url('../../img/logo/logougm.png') no-repeat center center;
-  background-size: contain;
-  display: inline-block;
-}
-.logo-text {
-  font-size: 1rem;
-  font-weight: 700;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
-  .about-content,
-  .tech-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .about-left {
-    position: static;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr 1fr;
+  .footer-horizontal-bar {
     gap: 2rem;
+  }
+
+  .footer-brand-section {
+    min-width: 250px;
+  }
+
+  .footer-brand-text h3 {
+    font-size: 1rem;
+  }
+
+  .footer-brand-text p {
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .hero-stats {
+  .footer-horizontal-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
     gap: 2rem;
   }
 
-  .stat-number {
-    font-size: 2rem;
+  .footer-brand-section {
+    flex-direction: column;
+    text-align: center;
+    min-width: unset;
+    width: 100%;
   }
 
-  .about-right {
-    grid-template-columns: 1fr;
+  .footer-logo-group {
+    justify-content: center;
   }
 
-  .tech-visual {
-    grid-template-columns: 1fr;
+  .logo-img {
+    width: 55px;
+    height: 55px;
   }
 
-  .footer-content {
-    grid-template-columns: 1fr;
+  .footer-brand-text {
+    max-width: 400px;
+  }
+
+  .footer-brand-text h3 {
+    font-size: 1rem;
+  }
+
+  .footer-brand-text p {
+    font-size: 0.8rem;
+  }
+
+  .footer-contact-btn {
+    padding: 0.65rem 1.75rem;
+    font-size: 0.85rem;
+  }
+
+  .social-link {
+    width: 38px;
+    height: 38px;
   }
 
   .footer-bottom {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
   }
 
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .blob {
-    width: 300px;
-    height: 300px;
+  .scroll-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
+  .footer-main {
+    padding: 2rem 0 1.25rem;
   }
 
-  .section-title {
-    font-size: 1.75rem;
+  .footer-wave {
+    height: 80px;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
+  .footer-wave svg {
+    height: 80px;
   }
 
-  .btn {
-    width: 100%;
-    justify-content: center;
+  .footer-horizontal-bar {
+    gap: 1.5rem;
+    padding: 0 0.75rem;
   }
 
-  .timeline-item {
+  .footer-brand-section {
     gap: 1rem;
   }
 
-  .timeline-icon {
-    width: 60px;
-    height: 60px;
+  .footer-logo-group {
+    gap: 0.75rem;
   }
 
-  .timeline-connector {
-    left: 30px;
+  .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer-brand-text h3 {
+    font-size: 0.95rem;
+  }
+
+  .footer-brand-text p {
+    font-size: 0.75rem;
+  }
+
+  .footer-contact-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-social-section {
+    gap: 0.6rem;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+  }
+
+  .social-link svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+    padding: 1rem 0;
+    margin-top: 1.25rem;
+  }
+
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .scroll-to-top svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .footer-brand-text p {
+    font-size: 0.7rem;
+  }
+
+  .footer-contact-btn {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  .social-link {
+    width: 34px;
+    height: 34px;
   }
 }

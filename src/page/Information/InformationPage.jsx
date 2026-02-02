@@ -535,18 +535,24 @@ const CTASection = () => {
           <div className="cta-buttons">
             <Link
               to="/kegiatan"
-              className="btn btn-primary"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} // Scroll to the top
+              className="btn btn-info"
             >
-              <span>🌱 Lihat Program Kami</span>
+              🌱 Lihat Program Kami
             </Link>
             <Link
               to="/"
               className="btn btn-secondary"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} // Scroll to the top
             >
-              <span>🏠 Kembali ke Beranda</span>
+              🏠 Kembali ke Beranda
             </Link>
+            <a
+              href="https://drive.google.com/drive/folders/1ta_yElZhQrg95ph8gF_JZlysUzbZ1VE4?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-link"
+            >
+              📂 Lihat Sumber Artikel
+            </a>
           </div>
         </div>
       </div>

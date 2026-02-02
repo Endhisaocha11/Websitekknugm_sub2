@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const imgHidroponik = "/src/assets/Hidroponik.png";
+const imgPenguranganSampah = "/src/assets/img/sampah/PenguranganPlastik.png";
+const pdfByeByePlastics = "/src/assets/byebyeplastics.pdf";
 
 const LeafIcon = () => (
   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2e7d32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -9,106 +11,73 @@ const LeafIcon = () => (
   </svg>
 );
 
-export default function HidroponikPage() {
+export default function PengurangansampahPage() {
   const [lightboxImg, setLightboxImg] = useState(null);
-  
-  // GANTI URL_VIDEO_YOUTUBE dengan link YouTube Anda
-  // Format: https://www.youtube.com/embed/VIDEO_ID?autoplay=1
-  const youtubeVideoUrl = "https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1";
 
-  const alatBahan = [
-    { nama: "Botol atau galon bekas", fungsi: "Wadah tanaman & nutrisi", icon: "🍾" },
-    { nama: "Kain flanel/kain bekas", fungsi: "Sumbu penyalur nutrisi", icon: "🧵" },
-    { nama: "Rockwool/spons cuci piring", fungsi: "Media semai", icon: "🧽" },
-    { nama: "Nutrisi AB mix", fungsi: "Makanan tambahan", icon: "💧" },
-    { nama: "Cocopeat/sabut kelapa (opsional)", fungsi: "Pengganti tanah", icon: "🥥" },
-    { nama: "Benih sayur", fungsi: "Tanaman uji coba", icon: "🌱" },
+  const dampakPlastik = [
+    { icon: "🌊", text: "Mencemari sungai dan laut", color: "#42a5f5" },
+    { icon: "🐢", text: "Membahayakan satwa liar", color: "#66bb6a" },
+    { icon: "⏰", text: "Bertahan ratusan tahun di alam", color: "#ffa726" },
+    { icon: "🏞️", text: "Merusak keindahan lingkungan", color: "#26c6da" },
+    { icon: "🌡️", text: "Berkontribusi pada perubahan iklim", color: "#ef5350" },
+    { icon: "💧", text: "Menyumbat saluran air", color: "#42a5f5" },
   ];
 
-  const sistemHidroponik = [
+  const langkahSederhana = [
     {
-      nama: "Sistem Sumbu (Wick)",
-      desc: "Sistem paling sederhana ini merupakan sistem pasif/tidak bergerak dengan memanfaatkan daya kapilaritas sumbu untuk menyerap larutan nutrisi.",
-      icon: "🧵",
-      color: "#ef5350"
+      icon: "🛍️",
+      title: "Bawa Tas Belanja Sendiri",
+      desc: "Gunakan tas kain atau tas belanja yang dapat digunakan berulang kali",
+      tips: "Simpan tas lipat di tas atau mobil agar tidak lupa"
     },
     {
-      nama: "Sistem Kultur Air (Water Culture)/Rakit Apung",
-      desc: "Sistem sederhana yang bersifat aktif/bergerak dengan cara mengapungkan tanaman menggunakan styrofoam di atas permukaan larutan nutrisi, serta memasang pompa udara/aerator untuk ketersediaan oksigen.",
-      icon: "🌊",
-      color: "#42a5f5"
-    },
-    {
-      nama: "Sistem Pasang Surut (Ebb and Flow/Flood and Drain)",
-      desc: "Sistem dimana larutan nutrisi diberikan dengan cara menggenangi/merendam media tanam (zona akar) untuk beberapa waktu tertentu, kemudian dialirkan kembali ke bak penampungan.",
-      icon: "🌀",
-      color: "#26c6da"
-    },
-    {
-      nama: "Sistem Fertigasi (Fertilizer and Drip Irrigation)",
-      desc: "Sistem ini dilakukan dengan cara menyiram tanaman dengan meneteskan larutan nutrisi. Biasanya digunakan pompa dan pengontrol waktu untuk mengaturnya.",
       icon: "💧",
-      color: "#66bb6a"
+      title: "Botol Minum Isi Ulang",
+      desc: "Gunakan tumbler atau botol minum yang dapat diisi ulang",
+      tips: "Pilih botol stainless steel atau kaca yang tahan lama"
     },
     {
-      nama: "Sistem NFT (Nutrient Film Technique)",
-      desc: "Sistem dimana larutan nutrisi diberikan sangat dangkal/tipis dan mengalir terus menerus. Keuntungannya adalah tercukupinya pasokan air, oksigen dan nutrisi pada akar tanaman.",
-      icon: "📏",
-      color: "#9ccc65"
+      icon: "🥤",
+      title: "Tolak Sedotan Plastik",
+      desc: "Katakan tidak pada sedotan plastik atau bawa sedotan sendiri",
+      tips: "Sedotan stainless atau bambu adalah alternatif yang baik"
     },
     {
-      nama: "Sistem Aeroponik",
-      desc: "Sistem hidroponik yang menggunakan teknologi tinggi. Akar yang menggantung di udara dikabutkan dengan larutan nutrisi menggunakan pengaturan waktu.",
-      icon: "💨",
-      color: "#ab47bc"
+      icon: "🍱",
+      title: "Wadah Makanan Sendiri",
+      desc: "Bawa tempat makan dan alat makan sendiri saat beli makanan",
+      tips: "Banyak merchant memberikan diskon untuk yang membawa wadah sendiri"
     },
-  ];
-
-  const mediaTanam = [
-    "Arang sekam", "Rock wool", "Spon/busa", "Serbuk serabut kelapa", 
-    "Zeolite", "Pecahan genteng/batu bata", "Kerikil", "Serbuk serat pakis"
-  ];
-
-  const steps = [
     {
-      icon: "🔧",
-      title: "Persiapan Botol",
-      items: [
-        "Potong botol menjadi dua bagian",
-        "Lubangi tutup botol/galon untuk tempat sumbu",
-        "Pasang kain flanel/bekas sebagai sumbu"
-      ]
+      icon: "♻️",
+      title: "Pilah Sampah",
+      desc: "Pisahkan sampah plastik untuk didaur ulang",
+      tips: "Cuci dan keringkan plastik sebelum dimasukkan ke tempat daur ulang"
     },
     {
       icon: "🌱",
-      title: "Penyemaian Benih",
-      items: [
-        "Basahi rockwool/spons",
-        "Taruh 2-3 benih per lubang",
-        "Simpan di tempat gelap sampai berkecambah"
-      ]
-    },
-    {
-      icon: "🏗️",
-      title: "Penyusunan/Pembuatan",
-      items: [
-        "Isi bagian bawah botol dengan larutan nutrisi (5ml AB mix + 1L air)",
-        "Balik bagian atas botol, isi dengan rockwool yang sudah ada kecambah",
-        "Tutupi dengan cocopeat sebagai pengganti tanah",
-        "Pastikan sumbu menyentuh larutan nutrisi"
-      ]
+      title: "Dukung Produk Ramah Lingkungan",
+      desc: "Pilih produk dengan kemasan minimal atau ramah lingkungan",
+      tips: "Cari produk berlabel 'eco-friendly' atau 'biodegradable'"
     },
   ];
 
-  const kelebihan = [
-    { icon: "🌍", text: "Ramah lingkungan" },
-    { icon: "💧", text: "Hemat air - penggunaan air hanya 1/20 dari tanaman biasa" },
-    { icon: "⚡", text: "Efisiensi tenaga dan waktu" },
-    { icon: "📦", text: "Tidak membutuhkan tempat yang luas" },
-    { icon: "📍", text: "Dapat ditanam dimana saja" },
-    { icon: "🚀", text: "Pertumbuhan tanaman lebih cepat" },
-    { icon: "✨", text: "Kualitas hasil tanaman dapat terjaga" },
-    { icon: "☀️", text: "Tidak mengenal musim" },
+  const contohPlastikSekaliPakai = [
+    "Kantong plastik belanja",
+    "Sedotan plastik",
+    "Botol air mineral",
+    "Gelas plastik",
+    "Sendok & garpu plastik",
+    "Bungkus makanan",
+    "Styrofoam",
+    "Plastik pembungkus"
+  ];
+
+  const faktaMengejutkan = [
+    { angka: "8 juta ton", desc: "Plastik masuk ke lautan setiap tahun" },
+    { angka: "450 tahun", desc: "Waktu yang dibutuhkan plastik untuk terurai" },
+    { angka: "1 juta", desc: "Burung laut mati setiap tahun karena plastik" },
+    { angka: "5 trilun", desc: "Kantong plastik digunakan setiap tahun di dunia" },
   ];
 
   const Divider = ({ label }) => (
@@ -125,7 +94,7 @@ export default function HidroponikPage() {
       style={{ position: "fixed", inset: 0, zIndex: 999, background: "rgba(0,0,0,0.85)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24, cursor: "pointer" }}
     >
       <div style={{ position: "relative", maxWidth: "90vw", maxHeight: "85vh" }}>
-        <img src={lightboxImg} alt="zoom" style={{ maxWidth: "100%", maxHeight: "85vh", borderRadius: 12, objectFit: "contain", display: "block" }} />
+        <img src={lightboxImg} alt="zoom" style={{ maxWidth: "80%", maxHeight: "85vh", borderRadius: 12, objectFit: "contain", display: "block", margin: "0 auto", justifyContent: "center" }} />
         <button
           onClick={() => setLightboxImg(null)}
           style={{ position: "absolute", top: 8, right: 8, background: "rgba(0,0,0,0.55)", border: "none", color: "#fff", borderRadius: "50%", width: 32, height: 32, fontSize: 18, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
@@ -135,7 +104,7 @@ export default function HidroponikPage() {
   );
 
   return (
-    <div style={{ fontFamily: "'Segoe UI', sans-serif", background: "linear-gradient(160deg, #e8f5e9 0%, #f1f8e9 50%, #e0f2f1 100%)", minHeight: "100vh", color: "#2d3a2e",  paddingTop: "80px" }}>
+    <div style={{ fontFamily: "'Segoe UI', sans-serif", background: "linear-gradient(160deg, #e8f5e9 0%, #f1f8e9 50%, #e0f2f1 100%)", minHeight: "100vh", color: "#2d3a2e", paddingTop: "80px" }}>
       
       {lightboxImg && <Lightbox />}
 
@@ -149,25 +118,26 @@ export default function HidroponikPage() {
             <span style={{ color: "#a5d6a7", fontSize: 13, fontWeight: 600, letterSpacing: 1.5, textTransform: "uppercase" }}>Program KKN-PPM · UGM</span>
           </div>
           <h1 style={{ color: "#fff", fontSize: "clamp(24px, 5.5vw, 32px)", fontWeight: 700, margin: 0, lineHeight: 1.3 }}>
-            Hidroponik Sederhana<br /><span style={{ color: "#a5d6a7" }}>Berbasis Limbah Botol</span>
+            Kurangi Plastik Sekali Pakai<br /><span style={{ color: "#a5d6a7" }}>Langkah Sederhana untuk Bumi</span>
           </h1>
-          <p style={{ color: "#c8e6c9", fontSize: 14, marginTop: 10, marginBottom: 0, lineHeight: 1.5 }}>Bercocok Tanam Tanpa Tanah · Ramah Lingkungan</p>
+          <p style={{ color: "#c8e6c9", fontSize: 14, marginTop: 10, marginBottom: 0, lineHeight: 1.5 }}>Plastik Berkurang · Bumi Senang 💚</p>
         </div>
       </div>
 
-      {/* ═══════════ PENGERTIAN HIDROPONIK ═══════════ */}
+      {/* ═══════════ APA ITU PLASTIK SEKALI PAKAI ═══════════ */}
       <div style={{ maxWidth: 680, margin: "0 auto", padding: "30px 18px 0" }}>
         <div style={{ background: "#fff", borderRadius: 18, overflow: "hidden", boxShadow: "0 2px 14px rgba(46,125,50,0.09)" }}>
-          {/* Gambar Hidroponik - Responsif dan Tanpa Border */}
+          {/* Gambar Pengurangan Sampah */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "16px" }}>
             <img
-              src={imgHidroponik}
-              alt="Hidroponik"
-              onClick={() => setLightboxImg(imgHidroponik)}
+              src={imgPenguranganSampah}
+              alt="Pengurangan Sampah Plastik"
+              onClick={() => setLightboxImg(imgPenguranganSampah)}
               style={{
-                maxWidth: "45%", // Make the image smaller
+                maxWidth: "50%",
                 height: "auto",
                 objectFit: "contain",
+                marginTop: 10,
                 cursor: "pointer",
                 transition: "transform 0.3s",
                 display: "block",
@@ -183,202 +153,166 @@ export default function HidroponikPage() {
           {/* Teks Pengertian */}
           <div style={{ padding: "12px 24px 24px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
-              <span style={{ fontSize: 20 }}>🌿</span>
-              <h2 style={{ margin: 0, fontSize: 17, color: "#1b5e20", fontWeight: 700 }}>Apa itu Hidroponik?</h2>
+              <span style={{ fontSize: 20 }}>🛍️</span>
+              <h2 style={{ margin: 0, fontSize: 17, color: "#1b5e20", fontWeight: 700 }}>Apa itu Plastik Sekali Pakai?</h2>
             </div>
             <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#4a5e4b" }}>
-              Hidroponik berasal dari bahasa Yunani yaitu <strong style={{ color: "#2e7d32" }}>hydro</strong> yang berarti air dan <strong style={{ color: "#2e7d32" }}>ponos</strong> yang artinya daya. Hidroponik juga dikenal sebagai <em>soilless culture</em> atau budidaya tanaman tanpa tanah.
+              Plastik sekali pakai adalah plastik yang <strong style={{ color: "#2e7d32" }}>digunakan hanya satu kali</strong> dan setelah itu langsung menjadi sampah. Plastik jenis ini sangat praktis, tetapi dampaknya terhadap lingkungan sangat besar.
             </p>
-            <p style={{ margin: "10px 0 0", fontSize: 14, lineHeight: 1.75, color: "#4a5e4b" }}>
-              Jadi hidroponik berarti budidaya tanaman yang memanfaatkan air dan tanpa menggunakan tanah sebagai media. Dengan memenuhi kebutuhan nutrisi (unsur hara), setiap tanaman dapat tumbuh dengan baik walaupun tidak menggunakan media tanah. Selain nutrisi, unsur lain yang harus diperhatikan antara lain adalah kebutuhan <strong style={{ color: "#2e7d32" }}>oksigen, air dan sinar matahari</strong>.
-            </p>
+            <div style={{ marginTop: 16 }}>
+              <p style={{ margin: "0 0 8px", fontSize: 13.5, fontWeight: 700, color: "#2e7d32" }}>Contoh plastik sekali pakai:</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {contohPlastikSekaliPakai.map((item, i) => (
+                  <span key={i} style={{ background: "linear-gradient(135deg, #e8f5e9, #c8e6c9)", color: "#1b5e20", fontSize: 12, fontWeight: 600, padding: "5px 12px", borderRadius: 16, border: "1px solid #a5d6a7" }}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ═══════════ KELEBIHAN HIDROPONIK ═══════════ */}
+      {/* ═══════════ FAKTA MENGEJUTKAN ═══════════ */}
       <div style={{ maxWidth: 680, margin: "28px auto 0", padding: "0 18px" }}>
-        <Divider label="Kelebihan Hidroponik" />
+        <Divider label="Fakta Mengejutkan" />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12, marginTop: 16 }}>
+          {faktaMengejutkan.map((fakta, i) => (
+            <div key={i} style={{ background: "linear-gradient(135deg, #fff, #f1f8e9)", borderRadius: 14, padding: "18px 16px", boxShadow: "0 2px 10px rgba(46,125,50,0.09)", border: "2px solid #c8e6c9", textAlign: "center" }}>
+              <div style={{ fontSize: 24, fontWeight: 900, color: "#d32f2f", marginBottom: 6, lineHeight: 1 }}>{fakta.angka}</div>
+              <p style={{ margin: 0, fontSize: 12, color: "#4a5e4b", lineHeight: 1.4 }}>{fakta.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ═══════════ MENGAPA HARUS DIKURANGI ═══════════ */}
+      <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px" }}>
+        <Divider label="Mengapa Harus Dikurangi?" />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 12, marginTop: 16 }}>
-          {kelebihan.map((k, i) => (
+          {dampakPlastik.map((dampak, i) => (
             <div key={i} style={{ background: "#fff", borderRadius: 14, padding: "15px 17px", boxShadow: "0 2px 10px rgba(46,125,50,0.07)", border: "1px solid #e0f2e0", display: "flex", gap: 12, alignItems: "center" }}>
-              <div style={{ background: "linear-gradient(135deg, #e8f5e9, #c8e6c9)", borderRadius: 10, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{k.icon}</div>
-              <p style={{ margin: 0, fontSize: 13, color: "#4a5e4b", lineHeight: 1.5 }}>{k.text}</p>
+              <div style={{ background: `${dampak.color}15`, borderRadius: 10, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{dampak.icon}</div>
+              <p style={{ margin: 0, fontSize: 13, color: "#4a5e4b", lineHeight: 1.5 }}>{dampak.text}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ═══════════ VIDEO ═══════════ */}
-      <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px" }}>
-        <Divider label="Video Tutorial" />
-        <div style={{ background: "#fff", borderRadius: 18, padding: 24, marginTop: 16, boxShadow: "0 2px 14px rgba(46,125,50,0.09)", border: "1px solid #e0f2e0" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-            <span style={{ fontSize: 22 }}>🎥</span>
-            <h2 style={{ margin: 0, fontSize: 17, color: "#1b5e20", fontWeight: 700 }}>Video Kegiatan Hidroponik</h2>
-          </div>
-          <p style={{ margin: "0 0 16px", fontSize: 13.5, color: "#5a6b5b", lineHeight: 1.6 }}>
-            Tonton video kegiatan sosialiasi hidroponik berbasis limbah botol yang telah kami lakukan di Desa Banyuurip.
-          </p>
-          
-          {/* YouTube Video Embed - AUTOPLAY */}
-          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: 12, background: "#000" }}>
-            <iframe
-              src={youtubeVideoUrl}
-              title="Tutorial Hidroponik"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", borderRadius: 12 }}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* ═══════════ 6 SISTEM HIDROPONIK ═══════════ */}
-      <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px" }}>
-        <Divider label="6 Dasar Sistem Hidroponik" />
-        <div style={{ display: "flex", flexDirection: "column", gap: 14, marginTop: 16 }}>
-          {sistemHidroponik.map((sistem, i) => (
-            <div key={i} style={{ background: "#fff", borderRadius: 16, padding: "20px 22px", boxShadow: "0 2px 10px rgba(46,125,50,0.07)", border: "1px solid #e0f2e0" }}>
-              <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-                <div style={{ background: `${sistem.color}15`, borderRadius: 12, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, flexShrink: 0 }}>{sistem.icon}</div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                    <span style={{ background: sistem.color, color: "#fff", fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 12 }}>{i + 1}</span>
-                    <h3 style={{ margin: 0, fontSize: 15, color: "#1b5e20", fontWeight: 700 }}>{sistem.nama}</h3>
-                  </div>
-                  <p style={{ margin: 0, fontSize: 13, color: "#5a6b5b", lineHeight: 1.6 }}>{sistem.desc}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ═══════════ MEDIA TANAM ═══════════ */}
+      {/* ═══════════ DAMPAK NYATA ═══════════ */}
       <div style={{ maxWidth: 680, margin: "28px auto 0", padding: "0 18px" }}>
-        <div style={{ background: "linear-gradient(135deg, #1b5e20, #2e7d32)", borderRadius: 18, padding: 26, color: "#fff" }}>
+        <div style={{ background: "linear-gradient(135deg, #d32f2f, #e53935)", borderRadius: 18, padding: 26, color: "#fff" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-            <span style={{ fontSize: 26 }}>🌾</span>
-            <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700 }}>Media Tanam Hidroponik</h2>
+            <span style={{ fontSize: 26 }}>⚠️</span>
+            <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700 }}>Dampak Nyata di Sekitar Kita</h2>
           </div>
-          <p style={{ margin: "0 0 14px", fontSize: 14, lineHeight: 1.75, color: "#c8e6c9" }}>
-            Beberapa contoh media tanam yang dapat digunakan dalam sistem hidroponik:
+          <p style={{ margin: "0 0 14px", fontSize: 14, lineHeight: 1.75, color: "#ffcdd2" }}>
+            Sampah plastik yang tidak terkelola dengan baik dapat:
           </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-            {mediaTanam.map((media, i) => (
-              <span key={i} style={{ background: "rgba(255,255,255,0.15)", color: "#fff", fontSize: 12.5, fontWeight: 600, padding: "6px 14px", borderRadius: 20, border: "1px solid rgba(255,255,255,0.2)" }}>
-                {media}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ═══════════ NUTRISI HIDROPONIK ═══════════ */}
-      <div style={{ maxWidth: 680, margin: "28px auto 0", padding: "0 18px" }}>
-        <div style={{ background: "linear-gradient(135deg, #e8f5e9, #f1f8e9)", borderRadius: 18, padding: 26, border: "1px solid #c8e6c9" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-            <span style={{ fontSize: 26 }}>💧</span>
-            <h2 style={{ margin: 0, fontSize: 18, color: "#1b5e20", fontWeight: 700 }}>Nutrisi Hidroponik</h2>
-          </div>
-          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#4a5e4b" }}>
-            Larutan nutrisi terdiri dari berbagai garam pupuk yang dilarutkan ke dalam air dan digunakan sebagai sumber nutrisi bagi tanaman yang dibudidayakan secara hidroponik.
-          </p>
-          <p style={{ margin: "10px 0 0", fontSize: 14, lineHeight: 1.75, color: "#4a5e4b" }}>
-            Nutrisi untuk tanaman hidroponik disesuaikan dengan kebutuhan unsur hara setiap tanaman, sehingga tanaman bisa optimal pertumbuhannya. Nutrisi hidroponik biasa disebut <strong style={{ color: "#2e7d32" }}>nutrisi AB mix</strong> yang oleh formulatornya disesuaikan dengan jenis tanaman.
-          </p>
-        </div>
-      </div>
-
-      {/* ═══════════ ALAT & BAHAN ═══════════ */}
-      <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px" }}>
-        <Divider label="Alat & Bahan" />
-        <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 16 }}>
-          <div style={{ background: "linear-gradient(135deg, #1b5e20, #2e7d32)", borderRadius: 18, padding: "20px 24px", color: "#fff" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-              <span style={{ fontSize: 22 }}>🛠️</span>
-              <h2 style={{ margin: 0, fontSize: 17, fontWeight: 700 }}>Bahan yang Diperlukan</h2>
-            </div>
-            <p style={{ margin: 0, fontSize: 12, color: "#a5d6a7" }}>6 item bahan utama</p>
-          </div>
-
-          {alatBahan.map((item, i) => (
-            <div key={i} style={{ background: "#fff", borderRadius: 14, padding: "17px 19px", boxShadow: "0 2px 10px rgba(46,125,50,0.07)", border: "1px solid #e0f2e0", display: "flex", gap: 14, alignItems: "flex-start" }}>
-              <div style={{ background: "linear-gradient(135deg, #e8f5e9, #c8e6c9)", borderRadius: 12, width: 46, height: 46, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, flexShrink: 0 }}>{item.icon}</div>
-              <div style={{ flex: 1 }}>
-                <h3 style={{ margin: "0 0 4px", fontSize: 14, color: "#1b5e20", fontWeight: 700 }}>{item.nama}</h3>
-                <p style={{ margin: 0, fontSize: 13, color: "#5a6b5b", lineHeight: 1.5 }}>{item.fungsi}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ═══════════ TAHAPAN PEMBUATAN ═══════════ */}
-      <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px" }}>
-        <Divider label="Tahapan Pembuatan" />
-        <div style={{ position: "relative", marginTop: 20 }}>
-          <div style={{ position: "absolute", left: 22, top: 0, bottom: 0, width: 3, background: "linear-gradient(to bottom, #2e7d32, #a5d6a7)", borderRadius: 2 }} />
-          <div style={{ display: "flex", flexDirection: "column", gap: 14, position: "relative", zIndex: 1 }}>
-            {steps.map((step, i) => (
-              <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                <div style={{ background: "#2e7d32", border: "3px solid #2e7d32", borderRadius: "50%", width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0, boxShadow: "0 2px 8px rgba(46,125,50,0.25)" }}>{step.icon}</div>
-                <div style={{ background: "#fff", borderRadius: 14, padding: "16px 18px", flex: 1, boxShadow: "0 2px 10px rgba(46,125,50,0.07)", border: "1px solid #e0f2e0" }}>
-                  <span style={{ background: "#2e7d32", color: "#fff", fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 10 }}>Langkah {i + 1}</span>
-                  <h3 style={{ margin: "8px 0 8px", fontSize: 15, color: "#1b5e20", fontWeight: 700 }}>{step.title}</h3>
-                  <ul style={{ margin: 0, paddingLeft: 20, color: "#5a6b5b" }}>
-                    {step.items.map((item, j) => (
-                      <li key={j} style={{ fontSize: 13, lineHeight: 1.6, marginBottom: j < step.items.length - 1 ? 6 : 0 }}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ═══════════ TIPS PERAWATAN ═══════════ */}
-      <div style={{ maxWidth: 680, margin: "28px auto 0", padding: "0 18px" }}>
-        <div style={{ background: "linear-gradient(135deg, #1b5e20, #2e7d32)", borderRadius: 18, padding: 26, color: "#fff" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-            <span style={{ fontSize: 26 }}>💡</span>
-            <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700 }}>Tips Perawatan</h2>
-          </div>
-          <ul style={{ margin: 0, paddingLeft: 20, color: "#c8e6c9" }}>
-            <li style={{ fontSize: 14, lineHeight: 1.75, marginBottom: 8 }}>
-              Ganti larutan nutrisi setiap <strong style={{ color: "#a5d6a7" }}>7-10 hari sekali</strong> atau saat larutan berkurang drastis
-            </li>
-            <li style={{ fontSize: 14, lineHeight: 1.75, marginBottom: 8 }}>
-              Letakkan tanaman di tempat yang mendapat <strong style={{ color: "#a5d6a7" }}>cahaya matahari cukup</strong> (minimal 6 jam/hari)
-            </li>
-            <li style={{ fontSize: 14, lineHeight: 1.75, marginBottom: 8 }}>
-              Pastikan sumbu selalu <strong style={{ color: "#a5d6a7" }}>terendam larutan nutrisi</strong>
-            </li>
-            <li style={{ fontSize: 14, lineHeight: 1.75 }}>
-              Kontrol pH larutan nutrisi di kisaran <strong style={{ color: "#a5d6a7" }}>5.5-6.5</strong> untuk hasil optimal
-            </li>
+          <ul style={{ margin: 0, paddingLeft: 20, color: "#ffcdd2" }}>
+            <li style={{ fontSize: 14, lineHeight: 1.75, marginBottom: 6 }}>Mengotori sungai, lahan, dan lingkungan permukiman</li>
+            <li style={{ fontSize: 14, lineHeight: 1.75, marginBottom: 6 }}>Menurunkan kualitas hidup masyarakat</li>
+            <li style={{ fontSize: 14, lineHeight: 1.75, marginBottom: 6 }}>Merusak kawasan wisata dan keindahan alam</li>
+            <li style={{ fontSize: 14, lineHeight: 1.75 }}>Mengganggu kesehatan dan ekosistem</li>
           </ul>
         </div>
       </div>
 
-      {/* ═══════════ PENUTUP ═══════════ */}
+      {/* ═══════════ LANGKAH SEDERHANA ═══════════ */}
       <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px" }}>
-        <div style={{ background: "linear-gradient(135deg, #e8f5e9, #f1f8e9)", borderRadius: 18, padding: 26, border: "1px solid #c8e6c9" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-            <span style={{ fontSize: 22 }}>📝</span>
-            <h2 style={{ margin: 0, fontSize: 17, color: "#1b5e20", fontWeight: 700 }}>Kesimpulan</h2>
-          </div>
-          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#4a5e4b" }}>
-            Hidroponik sederhana berbasis limbah botol plastik merupakan solusi cerdas untuk bercocok tanam di lahan terbatas sekaligus mengurangi sampah plastik. Dengan metode ini, siapa saja dapat menanam sayuran segar di rumah dengan cara yang ramah lingkungan dan berkelanjutan.
-          </p>
-          <p style={{ margin: "10px 0 0", fontSize: 14, lineHeight: 1.75, color: "#4a5e4b" }}>
-            Mari mulai berkebun hidroponik dan berkontribusi untuk lingkungan yang lebih hijau! 🌱
-          </p>
+        <Divider label="Apa yang Bisa Kita Lakukan?" />
+        <div style={{ display: "flex", flexDirection: "column", gap: 14, marginTop: 16 }}>
+          {langkahSederhana.map((langkah, i) => (
+            <div key={i} style={{ background: "#fff", borderRadius: 16, padding: "20px 22px", boxShadow: "0 2px 10px rgba(46,125,50,0.07)", border: "1px solid #e0f2e0" }}>
+              <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                <div style={{ background: "linear-gradient(135deg, #e8f5e9, #c8e6c9)", borderRadius: 12, width: 48, height: 48, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, flexShrink: 0 }}>{langkah.icon}</div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                    <span style={{ background: "#2e7d32", color: "#fff", fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 12 }}>{i + 1}</span>
+                    <h3 style={{ margin: 0, fontSize: 15, color: "#1b5e20", fontWeight: 700 }}>{langkah.title}</h3>
+                  </div>
+                  <p style={{ margin: "0 0 6px", fontSize: 13, color: "#5a6b5b", lineHeight: 1.6 }}>{langkah.desc}</p>
+                  <p style={{ margin: 0, fontSize: 12, color: "#7a8f7b", fontStyle: "italic", lineHeight: 1.5 }}>💡 {langkah.tips}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* ═══════════ MITRA BYE BYE PLASTIC BAGS ═══════════ */}
+      <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px" }}>
+        <div style={{ background: "linear-gradient(135deg, #1b5e20, #2e7d32)", borderRadius: 18, padding: 26, color: "#fff" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+            <span style={{ fontSize: 26 }}>🤝</span>
+            <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700 }}>Mitra Kami</h2>
+          </div>
+          <p style={{ margin: "0 0 16px", fontSize: 14, lineHeight: 1.75, color: "#c8e6c9" }}>
+            Program ini didukung oleh <strong style={{ color: "#fff" }}>Bye Bye Plastic Bags</strong>, sebuah gerakan global yang dimulai oleh anak-anak muda untuk mengurangi penggunaan plastik sekali pakai.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            <a href="https://byebyeplasticbags.org/" target="_blank" rel="noopener noreferrer" style={{ color: "#a5d6a7", textDecoration: "none", fontSize: 14, display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 16 }}>🌐</span>
+              <span>byebyeplasticbags.org</span>
+            </a>
+            <a href="https://www.instagram.com/byebyeplasticbagsjogja" target="_blank" rel="noopener noreferrer" style={{ color: "#a5d6a7", textDecoration: "none", fontSize: 14, display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 16 }}>📸</span>
+              <span>@byebyeplasticbagsjogja</span>
+            </a>
+            <a href={pdfByeByePlastics} target="_blank" rel="noopener noreferrer" style={{ background: "rgba(255,255,255,0.15)", color: "#fff", padding: "10px 16px", borderRadius: 12, textDecoration: "none", fontSize: 13.5, fontWeight: 600, display: "inline-flex", alignItems: "center", gap: 8, marginTop: 6, border: "1px solid rgba(255,255,255,0.25)", width: "fit-content" }}>
+              <span style={{ fontSize: 18 }}>📄</span>
+              <span>Download Materi Lengkap (PDF)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* ═══════════ CALL TO ACTION ═══════════ */}
+      <div style={{ maxWidth: 680, margin: "28px auto 0", padding: "0 18px" }}>
+        <div style={{ background: "linear-gradient(135deg, #e8f5e9, #f1f8e9)", borderRadius: 18, padding: 26, border: "2px solid #66bb6a", textAlign: "center" }}>
+          <div style={{ fontSize: 48, marginBottom: 12 }}>💚</div>
+          <h2 style={{ margin: "0 0 10px", fontSize: 20, color: "#1b5e20", fontWeight: 700 }}>Pilihan Kita Menentukan Masa Depan Bumi</h2>
+          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: "#4a5e4b" }}>
+            Jika sampah plastik berkurang, maka lingkungan lebih bersih dan bumi lebih sehat!
+          </p>
+          <div style={{ marginTop: 16, padding: "12px 20px", background: "#fff", borderRadius: 12, border: "2px dashed #66bb6a" }}>
+            <p style={{ margin: 0, fontSize: 16, fontWeight: 700, color: "#2e7d32" }}>
+              Mulai dari Kita, Mulai dari Sekarang ✨
+            </p>
+          </div>
+        </div>
+      </div>
+      
+         <div className="cta-buttons" style={{ textAlign: "center", marginTop: "24px" }}>
+        <Link
+          to="/kegiatan"
+          className="btn btn-primary btn-large"
+          style={{
+            display: "inline-block",
+            background: "#2e7d32",
+            color: "#fff",
+            fontSize: "16px",
+            fontWeight: "600",
+            padding: "12px 24px",
+            borderRadius: "8px",
+            textDecoration: "none",
+            boxShadow: "0 4px 12px rgba(46,125,50,0.3)",
+            transition: "background 0.3s, transform 0.2s",
+          }}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "#1b5e20";
+            e.currentTarget.style.transform = "translateY(-2px)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "#2e7d32";
+            e.currentTarget.style.transform = "translateY(0)";
+          }}
+        >
+          <span>🏠 Kembali ke Program</span>
+        </Link>
+      </div>
+
 
       {/* ═══════════ FOOTER ═══════════ */}
       <div style={{ maxWidth: 680, margin: "40px auto 0", padding: "24px 18px 36px", textAlign: "center", borderTop: "1px solid #c8e6c9" }}>

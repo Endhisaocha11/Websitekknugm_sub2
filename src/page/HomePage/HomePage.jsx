@@ -142,12 +142,11 @@ const HeroSection = () => {
 
         <div className="hero-buttons">
           <Link
-            to="/mulai"
+            to="/kegiatan"
             className="btn btn-primary"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} // Scroll to the top
           >
             <span>♻️ Mulai Kelola Sampah</span>
-            <span className="btn-arrow">→</span>
           </Link>
           <a
             href="#about"
