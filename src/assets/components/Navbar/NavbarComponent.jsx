@@ -46,7 +46,7 @@ const NavbarComponent = () => {
               Kegiatan
             </Nav.Link>
             <Nav.Link as={Link} to="/contact" className="nav-link-custom" onClick={() => { scrollToTop(); handleNavLinkClick(); }}>
-              Contact
+              Kontak
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

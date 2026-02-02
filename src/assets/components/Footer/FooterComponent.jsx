@@ -1,10 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './FooterComponent.css';
 import logoMemayuning from '/logomemayuningdlingo.png';
 import logoKKN from '/logokknugm.png';
 
 const FooterComponent = () => {
+    const [showScrollTop, setShowScrollTop] = useState(false);
+    const [showScrollBottom, setShowScrollBottom] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            // Show scroll to top button when user scrolls down
+            setShowScrollTop(scrollY > 300);
+
+            // Hide scroll to bottom button when near bottom
+            setShowScrollBottom(scrollY + windowHeight < documentHeight - 100);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Check initial state
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    const scrollToBottom = () => {
+        window.scrollTo({ 
+            top: document.documentElement.scrollHeight, 
+            behavior: 'smooth' 
+        });
+    };
+
     return (
       <footer className="footer">
         {/* Animated Wave using SVG */}
@@ -39,13 +72,6 @@ const FooterComponent = () => {
                   <h3>Urip Resik</h3>
                   <p>Platform pengelolaan sampah terpadu untuk lingkungan yang lebih bersih dan berkelanjutan.</p>
                 </div>
-              </div>
-
-              {/* Contact Button */}
-              <div className="footer-cta-section">
-                <a href="/contact" className="footer-contact-btn">
-                  Hubungi Kami
-                </a>
               </div>
 
               {/* Social Links */}
@@ -84,6 +110,7 @@ const FooterComponent = () => {
                     <path d="M9.5 2a1 1 0 0 0-1 1v16.25a2.75 2.75 0 1 1-2.75-2.75 1 1 0 0 0 1-1V7.5a1 1 0 0 0-1-1A6.5 6.5 0 1 0 13 13.5V3a1 1 0 0 0-1-1zM15 4.5v2.75a7.25 7.25 0 0 0 7.25 7.25 1 1 0 0 0 1-1V9.5a1 1 0 0 0-1-1 4.5 4.5 0 0 1-4.5-4.5 1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1z"/>
                   </svg>
                 </a>
+                {/* Instagram */}
                 <a 
                   href="https://instagram.com/memayuningdlingo" 
                   target="_blank" 
@@ -100,21 +127,39 @@ const FooterComponent = () => {
 
             {/* Copyright */}
             <div className="footer-bottom">
-              <p>&copy; 2025 KKN-PPM UGM Sub-Unit 2 Desa Banyuurip. All rights reserved.</p>
+              <p>&copy; 2026 KKN-PPM UGM Sub-Unit 2 Desa Banyuurip. All rights reserved.</p>
             </div>
           </div>
         </div>
 
-        {/* Scroll to Top Button */}
-        <button 
-          className="scroll-to-top"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          aria-label="Scroll to top"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M18 15l-6-6-6 6"/>
-          </svg>
-        </button>
+        {/* Scroll Buttons Container */}
+        <div className="scroll-buttons-container">
+          {/* Scroll to Top Button */}
+          {showScrollTop && (
+            <button 
+              className="scroll-button scroll-to-top"
+              onClick={scrollToTop}
+              aria-label="Scroll to top"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 15l-6-6-6 6"/>
+              </svg>
+            </button>
+          )}
+
+          {/* Scroll to Bottom Button */}
+          {showScrollBottom && (
+            <button 
+              className="scroll-button scroll-to-bottom"
+              onClick={scrollToBottom}
+              aria-label="Scroll to bottom"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+          )}
+        </div>
       </footer>
     );
 };

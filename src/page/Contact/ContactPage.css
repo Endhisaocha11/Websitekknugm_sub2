@@ -13,6 +13,7 @@
   --radius: 1.5rem;
 }
 
+/* ==================== BASE STYLES ==================== */
 .contact-page {
   min-height: 100vh;
   background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
@@ -21,6 +22,8 @@
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue",
     sans-serif;
   position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Animated Background */
@@ -51,7 +54,7 @@
   z-index: 1;
 }
 
-/* Header */
+/* ==================== HEADER ==================== */
 .contact-header {
   text-align: center;
   margin-bottom: 60px;
@@ -59,7 +62,7 @@
 }
 
 .contact-header h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.75rem, 5vw, 3rem);
   font-weight: 800;
   margin-bottom: 20px;
   color: var(--dark);
@@ -77,7 +80,7 @@
 }
 
 .contact-header p {
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
   line-height: 1.8;
   max-width: 700px;
   margin: 0 auto;
@@ -100,7 +103,7 @@
   }
 }
 
-/* Content Layout */
+/* ==================== CONTENT LAYOUT ==================== */
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -108,7 +111,7 @@
   margin-top: 40px;
 }
 
-/* Form Section */
+/* ==================== FORM SECTION ==================== */
 .contact-form-section {
   display: flex;
   flex-direction: column;
@@ -143,7 +146,7 @@
 
 .form-card h2 {
   color: var(--dark);
-  font-size: 1.8rem;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
   margin-bottom: 30px;
   font-weight: 700;
 }
@@ -173,7 +176,7 @@
 .form-group label {
   font-weight: 600;
   color: var(--dark);
-  font-size: 0.95rem;
+  font-size: clamp(0.9rem, 1.5vw, 0.95rem);
 }
 
 .form-group input,
@@ -182,12 +185,14 @@
   padding: 14px 18px;
   border-radius: 12px;
   border: 2px solid var(--border);
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1rem);
   font-family: inherit;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--light);
   box-sizing: border-box;
   color: var(--dark);
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .form-group input:focus,
@@ -214,7 +219,7 @@
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: white;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 2vw, 1.05rem);
   border: none;
   padding: 16px 28px;
   border-radius: 50px;
@@ -228,6 +233,8 @@
   box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
   position: relative;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .submit-btn::before {
@@ -264,7 +271,7 @@
   z-index: 1;
 }
 
-/* Info Section */
+/* ==================== INFO SECTION ==================== */
 .contact-info-section {
   display: flex;
   flex-direction: column;
@@ -299,7 +306,7 @@
 
 .info-card h2 {
   color: var(--dark);
-  font-size: 1.8rem;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
   margin-bottom: 30px;
   font-weight: 700;
 }
@@ -357,7 +364,7 @@
 
 .info-text h3 {
   color: var(--dark);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   margin-bottom: 8px;
   font-weight: 700;
 }
@@ -366,7 +373,8 @@
   color: var(--gray);
   line-height: 1.6;
   margin: 0;
-  font-size: 0.95rem;
+  font-size: clamp(0.9rem, 1.5vw, 0.95rem);
+  word-break: break-word;
 }
 
 .info-text a {
@@ -375,6 +383,7 @@
   font-weight: 600;
   transition: all 0.3s ease;
   position: relative;
+  word-break: break-all;
 }
 
 .info-text a::after {
@@ -396,14 +405,14 @@
   color: var(--primary-dark);
 }
 
-/* Social Links */
+/* ==================== SOCIAL LINKS ==================== */
 .social-links-info {
   margin-top: 20px;
 }
 
 .social-links-info h3 {
   color: var(--dark);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   margin-bottom: 16px;
   font-weight: 700;
 }
@@ -427,6 +436,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .social-btn::before {
@@ -482,45 +492,93 @@
   z-index: 1;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
+/* ==================== RESPONSIVE BREAKPOINTS ==================== */
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+  .contact-container {
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+
+  .contact-content {
+    gap: 60px;
+  }
+
+  .form-card,
+  .info-card {
+    padding: 50px;
+  }
+}
+
+/* Desktop to Tablet Landscape (992px - 1199px) */
+@media (max-width: 1199px) {
+  .contact-container {
+    max-width: 960px;
+  }
+
+  .contact-content {
+    gap: 35px;
+  }
+}
+
+/* Tablet Landscape & Small Desktop (768px - 991px) */
+@media (max-width: 991px) {
   .contact-content {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .contact-header h1 {
-    font-size: 2.5rem;
+  .contact-page {
+    padding: 120px 20px 70px;
+  }
+
+  .form-card,
+  .info-card {
+    padding: 35px 30px;
+  }
+
+  /* Disable hover effects on touch devices */
+  .form-card:hover,
+  .info-card:hover {
+    transform: none;
+  }
+
+  .info-item:hover {
+    transform: none;
+  }
+
+  .info-item:hover .info-icon {
+    transform: none;
   }
 }
 
-@media (max-width: 768px) {
+/* Tablet Portrait & Large Mobile (600px - 767px) */
+@media (max-width: 767px) {
   .contact-page {
-    padding: 110px 18px 60px;
+    padding: 100px 18px 60px;
   }
 
   .contact-header {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
   }
 
   .contact-header h1 {
-    font-size: 2rem;
     margin-bottom: 15px;
   }
 
   .contact-header p {
-    font-size: 1rem;
     padding: 0 10px;
   }
 
   .form-card,
   .info-card {
     padding: 30px 24px;
+    border-radius: 1.25rem;
   }
 
   .form-card h2,
   .info-card h2 {
-    font-size: 1.5rem;
     margin-bottom: 24px;
   }
 
@@ -532,66 +590,102 @@
     width: 50px;
     height: 50px;
     min-width: 50px;
+    border-radius: 14px;
+  }
+
+  .info-item {
+    gap: 18px;
+    margin-bottom: 26px;
+    padding-bottom: 26px;
+  }
+
+  .form-group {
+    gap: 8px;
+  }
+
+  .contact-form {
+    gap: 20px;
+  }
+
+  .social-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Disable all hover animations on tablets */
+  .submit-btn:hover,
+  .social-btn:hover {
+    transform: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .form-card:hover,
+  .info-card:hover {
+    box-shadow: var(--shadow-lg);
   }
 }
 
-@media (max-width: 480px) {
+/* iPhone 14 Pro Max, 14 Plus, 13 Pro Max (428px - 599px) */
+@media (max-width: 599px) and (min-width: 428px) {
   .contact-page {
-    padding: 90px 16px 40px;
-  }
-
-  .contact-container {
-    padding: 0 16px;
-  }
-
-  .contact-header h1 {
-    font-size: 1.75rem;
-  }
-
-  .contact-header p {
-    font-size: 0.95rem;
+    padding: 95px 20px 55px;
   }
 
   .form-card,
   .info-card {
-    padding: 24px 20px;
-    border-radius: 1rem;
+    padding: 28px 22px;
   }
 
-  .form-card h2,
-  .info-card h2 {
-    font-size: 1.35rem;
+  .form-group input,
+  .form-group textarea {
+    padding: 13px 17px;
+    border-radius: 11px;
+  }
+
+  .submit-btn {
+    padding: 15px 26px;
+    border-radius: 45px;
+  }
+}
+
+/* iPhone 14 Pro, 14, 13 Pro, 13, 12 (390px - 427px) */
+@media (max-width: 427px) and (min-width: 390px) {
+  .contact-page {
+    padding: 90px 18px 50px;
+  }
+
+  .contact-container {
+    padding: 0 18px;
+  }
+
+  .form-card,
+  .info-card {
+    padding: 26px 20px;
+    border-radius: 1.1rem;
   }
 
   .form-group input,
   .form-group textarea {
     padding: 12px 16px;
-    font-size: 0.95rem;
+    border-radius: 10px;
   }
 
   .submit-btn {
     padding: 14px 24px;
-    font-size: 1rem;
+    border-radius: 40px;
   }
 
   .info-icon {
     width: 48px;
     height: 48px;
     min-width: 48px;
-  }
-
-  .info-text h3 {
-    font-size: 1rem;
-  }
-
-  .info-text p,
-  .info-text a {
-    font-size: 0.9rem;
+    border-radius: 13px;
   }
 
   .social-btn {
     width: 48px;
     height: 48px;
+    border-radius: 14px;
   }
 
   .info-item {
@@ -601,36 +695,357 @@
   }
 }
 
-/* Very small screens */
-@media (max-width: 360px) {
-  .contact-header h1 {
-    font-size: 1.5rem;
+/* iPhone SE, 13 mini, 12 mini, 11 Pro, X, XS (375px - 389px) */
+@media (max-width: 389px) and (min-width: 375px) {
+  .contact-page {
+    padding: 85px 16px 45px;
+  }
+
+  .contact-container {
+    padding: 0 16px;
   }
 
   .form-card,
   .info-card {
-    padding: 20px 16px;
+    padding: 24px 18px;
+    border-radius: 1rem;
+  }
+
+  .form-card h2,
+  .info-card h2 {
+    margin-bottom: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 15px;
+  }
+
+  .contact-form {
+    gap: 18px;
+  }
+
+  .submit-btn {
+    padding: 13px 22px;
+  }
+
+  .info-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+  }
+
+  .social-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .info-item {
+    gap: 15px;
+    margin-bottom: 22px;
+    padding-bottom: 22px;
+  }
+}
+
+/* iPhone SE (1st gen), 6, 7, 8 and very small devices (360px - 374px) */
+@media (max-width: 374px) and (min-width: 360px) {
+  .contact-page {
+    padding: 80px 14px 40px;
+  }
+
+  .contact-container {
+    padding: 0 14px;
+  }
+
+  .contact-header {
+    margin-bottom: 35px;
+  }
+
+  .form-card,
+  .info-card {
+    padding: 22px 16px;
+    border-radius: 0.9rem;
+  }
+
+  .form-card h2,
+  .info-card h2 {
+    margin-bottom: 18px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 11px 14px;
+    font-size: 0.93rem;
+  }
+
+  .form-group textarea {
+    min-height: 120px;
+  }
+
+  .contact-form {
+    gap: 16px;
   }
 
   .submit-btn {
     padding: 12px 20px;
-    font-size: 0.95rem;
+    font-size: 0.96rem;
+  }
+
+  .info-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 12px;
+  }
+
+  .social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .social-buttons {
+    gap: 10px;
+  }
+
+  .info-item {
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
 }
 
-/* Smooth Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+/* Extra small devices (<360px) */
+@media (max-width: 359px) {
+  .contact-page {
+    padding: 75px 12px 35px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .contact-container {
+    padding: 0 12px;
+  }
+
+  .contact-header {
+    margin-bottom: 30px;
+  }
+
+  .contact-header h1::after {
+    width: 60px;
+    height: 3px;
+  }
+
+  .form-card,
+  .info-card {
+    padding: 20px 14px;
+    border-radius: 0.85rem;
+  }
+
+  .form-card h2,
+  .info-card h2 {
+    margin-bottom: 16px;
+  }
+
+  .form-card h2::after,
+  .info-card h2::after {
+    width: 50px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 13px;
+    font-size: 0.91rem;
+    border-radius: 9px;
+  }
+
+  .form-group textarea {
+    min-height: 110px;
+  }
+
+  .contact-form {
+    gap: 15px;
+  }
+
+  .submit-btn {
+    padding: 11px 18px;
+    font-size: 0.94rem;
+    gap: 8px;
+  }
+
+  .info-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 11px;
+  }
+
+  .social-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+  }
+
+  .social-buttons {
+    gap: 9px;
+  }
+
+  .info-item {
+    gap: 13px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+  }
+
+  .info-item:last-of-type {
+    margin-bottom: 30px;
   }
 }
 
-/* Print Styles */
+/* iPad Pro 12.9" (1024px portrait) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form-card,
+  .info-card {
+    padding: 40px 35px;
+  }
+}
+
+/* iPad Pro 12.9" & 11" (landscape) */
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  .contact-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .form-card,
+  .info-card {
+    padding: 38px 32px;
+  }
+}
+
+/* iPad Air, iPad 10.9", iPad Pro 11" (portrait) */
+@media (min-width: 768px) and (max-width: 834px) and (orientation: portrait) {
+  .contact-page {
+    padding: 110px 24px 65px;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==================== LANDSCAPE ORIENTATION ==================== */
+@media (max-width: 767px) and (orientation: landscape) {
+  .contact-page {
+    padding: 80px 18px 50px;
+  }
+
+  .contact-header {
+    margin-bottom: 35px;
+  }
+
+  .form-card,
+  .info-card {
+    padding: 25px 22px;
+  }
+
+  .form-group textarea {
+    min-height: 100px;
+  }
+
+  .info-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+/* ==================== TOUCH DEVICE OPTIMIZATIONS ==================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover effects on touch devices */
+  .form-card:hover,
+  .info-card:hover,
+  .info-item:hover,
+  .submit-btn:hover,
+  .social-btn:hover {
+    transform: none;
+  }
+
+  .info-item:hover .info-icon {
+    transform: none;
+  }
+
+  /* Increase touch targets */
+  .submit-btn,
+  .social-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    min-height: 44px;
+  }
+
+  /* Remove hover underline animation */
+  .info-text a:hover::after {
+    width: 0;
+  }
+}
+
+/* ==================== HIGH DPI DISPLAYS ==================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .contact-page::before {
+    background-size: cover;
+  }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .contact-header,
+  .contact-form-section,
+  .contact-info-section {
+    animation: none;
+  }
+}
+
+/* ==================== DARK MODE SUPPORT ==================== */
+@media (prefers-color-scheme: dark) {
+  /* Optional: Add dark mode styles if needed */
+  .contact-page {
+    background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+  }
+
+  .contact-page::before {
+    background:
+      radial-gradient(
+        circle at 20% 30%,
+        rgba(16, 185, 129, 0.15) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        rgba(59, 130, 246, 0.15) 0%,
+        transparent 50%
+      );
+  }
+}
+
+/* ==================== PRINT STYLES ==================== */
 @media print {
   .contact-page {
     background: white;
@@ -644,5 +1059,29 @@
   .submit-btn,
   .social-buttons {
     display: none;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .form-card,
+  .info-card {
+    box-shadow: none;
+    border: 1px solid #e5e7eb;
+    page-break-inside: avoid;
+  }
+}
+
+/* ==================== SMOOTH ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

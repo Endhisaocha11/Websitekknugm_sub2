@@ -468,7 +468,8 @@ export default function POCPage() {
       <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 18px" }}>
       <div style={{ textAlign: "center", marginTop: 24, marginBottom: 40 }}>
         <Link
-          to="/kegiatan"
+            to="/kegiatan"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           style={{
             display: "inline-block",
             background: "#4169E1",
@@ -483,7 +484,6 @@ export default function POCPage() {
             border: "none",
             cursor: "pointer"
           }}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           onMouseEnter={e => e.currentTarget.style.background = "#00008B"}
           onMouseLeave={e => e.currentTarget.style.background = "#4169E1"}
         >

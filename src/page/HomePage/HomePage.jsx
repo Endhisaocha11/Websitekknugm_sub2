@@ -169,7 +169,7 @@ const AboutSection = () => {
       <div className="container">
         <div className="about-content">
           <div className="about-left">
-            <div className="section-badge">🌱 Tentang Kami</div>
+            <div className="hero-badge">🌱 Tentang Kami</div>
             <h2 className="section-title">
               Mengapa Pengelolaan Sampah Itu Penting?
             </h2>
@@ -212,7 +212,7 @@ const WasteTypesSection = () => {
     <section id="waste-types" className={`waste-types-section reveal ${inView ? "visible" : ""}`} ref={ref}>
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">🗂️ Jenis Sampah</div>
+          <div className="hero-badge">🗂️ Jenis Sampah</div>
           <h2 className="section-title">Kenali Sampah, Kelola dengan Tepat</h2>
           <p className="section-desc">
             Pemahaman terhadap jenis sampah merupakan langkah awal dalam pengelolaan yang efektif
@@ -248,7 +248,7 @@ const ProcessSection = () => {
     <section id="process" className={`process-section reveal ${inView ? "visible" : ""}`} ref={ref}>
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">🔄 Alur Pengelolaan</div>
+          <div className="hero-badge">🔄 Alur Pengelolaan</div>
           <h2 className="section-title">Dari Rumah ke Lingkungan yang Lebih Bersih</h2>
           <p className="section-desc">
             Pengelolaan sampah dilakukan secara sistematis melalui beberapa tahapan
@@ -282,7 +282,7 @@ const BenefitsSection = () => {
     <section id="benefits" className={`benefits-section reveal ${inView ? "visible" : ""}`} ref={ref}>
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">📊 Dampak Positif</div>
+          <div className="hero-badge">📊 Dampak Positif</div>
           <h2 className="section-title">Manfaat yang Dirasakan Bersama</h2>
           <p className="section-desc">
             Implementasi pengelolaan sampah yang baik memberikan berbagai manfaat
@@ -314,7 +314,7 @@ const PDFSection = () => {
     <section id="booklet" className={`pdf-section reveal ${inView ? "visible" : ""}`} ref={ref}>
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">📄 Booklet Informasi</div>
+          <div className="hero-badge">📄 Booklet Informasi</div>
           <h2 className="section-title">Panduan Lengkap Pengelolaan Sampah</h2>
           <p className="section-desc">
             Unduh atau baca langsung booklet resmi yang berisi panduan praktis dan edukasi pengelolaan sampah.

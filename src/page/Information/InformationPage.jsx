@@ -196,7 +196,7 @@ const HeroSection = () => {
   return (
     <section id="hero" className="info-hero-section">
       <div className={`info-hero-content ${visible ? "visible" : ""}`}>
-        <div className="info-hero-badge">
+        <div className="hero-badge">
           <span>📚 Pusat Informasi</span>
         </div>
 
@@ -227,7 +227,7 @@ const DefinisiSection = () => {
     >
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">📖 Definisi</div>
+          <div className="hero-badge">📖 Definisi</div>
           <h2 className="section-title">Apa Itu Sampah?</h2>
         </div>
 
@@ -289,7 +289,7 @@ const JenisKelolaSection = () => {
     >
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">🗂️ Klasifikasi</div>
+          <div className="hero-badge">🗂️ Klasifikasi</div>
           <h2 className="section-title">Jenis-Jenis Sampah yang Dikelola</h2>
           <p className="section-desc">
             Berdasarkan UU RI No. 18 Tahun 2008 tentang Pengelolaan Sampah
@@ -326,7 +326,7 @@ const SumberSection = () => {
     >
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">📍 Sumber</div>
+          <div className="hero-badge">📍 Sumber</div>
           <h2 className="section-title">Dari Mana Sampah Berasal?</h2>
         </div>
 
@@ -360,7 +360,7 @@ const DampakSection = () => {
     >
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">⚠️ Dampak</div>
+          <div className="hero-badge">⚠️ Dampak</div>
           <h2 className="section-title">
             Dampak Sampah yang Tidak Dikelola
           </h2>
@@ -412,7 +412,7 @@ const SistemSection = () => {
     >
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">⚙️ Sistem</div>
+          <div className="hero-badge">⚙️ Sistem</div>
           <h2 className="section-title">Sistem Pengelolaan Sampah</h2>
           <p className="section-desc">
             Proses pengelolaan sampah menurut UU No. 18 Tahun 2008
@@ -477,7 +477,7 @@ const GallerySection = () => {
     >
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">🖼️ Galeri</div>
+          <div className="hero-badge">🖼️ Galeri</div>
           <h2 className="section-title">Dokumentasi Pengelolaan Sampah</h2>
           <p className="section-desc">
             Lihat dokumentasi visual kegiatan pengelolaan sampah

@@ -20,7 +20,7 @@ const ContactPage = () => {
     
     // Kirim via WhatsApp
     const waNumber = "6285647606527";
-    const waMessage = `*Pesan dari Website KKN*\n\nNama: ${formData.name}\nSubjek: ${formData.subjek}\n\nPesan:\n${formData.message}`;
+    const waMessage = `*Pesan dari Website UripResik*\n\nNama: ${formData.name}\nSubjek: ${formData.subjek}\nPesan:\n${formData.message}`;
     const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
     
     window.open(waUrl, '_blank');
@@ -41,7 +41,7 @@ const ContactPage = () => {
           <h1>Hubungi Kami</h1>
           <p>
             Punya pertanyaan, saran, atau ingin berkolaborasi dengan tim{" "}
-            <strong>KKN UGM Sub Unit 2 2025</strong>?<br />
+            <strong>KKN UGM Sub Unit 2 2026</strong>?<br />
             Silakan kirim pesan melalui form di bawah ini atau hubungi kontak resmi kami.
           </p>
         </div>

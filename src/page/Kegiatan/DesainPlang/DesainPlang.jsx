@@ -12,6 +12,7 @@ const SDGIcon = ({ number, color }) => (
   </svg>
 );
 
+
 const LeafIcon = () => (
   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2e7d32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.71c.32.17.65.35.94.55C9 22 12 22 15 20.5c4-2 5-7 2-11C15 7 11 6 8 8" />
@@ -75,11 +76,11 @@ export default function EcoBrickPlang() {
     const [ref, inView] = useInView({ threshold: 0.1 });
     return (
       <div ref={ref} style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px", opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(20px)", transition: "all 0.6s ease-out" }}>
-        <Divider label="Poster Design" />
+        <Divider label="Poster Desain" />
         <div style={{ background: "#fff", borderRadius: 18, padding: 24, marginTop: 16, boxShadow: "0 2px 14px rgba(46,125,50,0.09)", border: "1px solid #e0f2e0" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
             <span style={{ fontSize: 22 }}>📄</span>
-            <h2 style={{ margin: 0, fontSize: 17, color: "#1b5e20", fontWeight: 700 }}>Poster Design Plang Ecobrick</h2>
+            <h2 style={{ margin: 0, fontSize: 17, color: "#1b5e20", fontWeight: 700 }}>Poster Desain Plang Ecobrick</h2>
           </div>
           <p style={{ margin: "0 0 20px", fontSize: 13.5, color: "#5a6b5b", lineHeight: 1.6 }}>
             Unduh atau baca langsung poster yang berisi panduan praktis bagaimana membuat plang nama sekolah dari botol plastik.
@@ -91,7 +92,7 @@ export default function EcoBrickPlang() {
               src="/PosterEcobrick.pdf"
               type="application/pdf"
               style={{ width: "100%", height: 500, border: "none", display: "block" }}
-              title="Poster Design Plang Ecobrick"
+              title="Poster Desain Plang Ecobrick"
             />
           </div>
 
@@ -374,7 +375,7 @@ export default function EcoBrickPlang() {
           onMouseEnter={e => e.currentTarget.style.background = "#1B5E20"}
           onMouseLeave={e => e.currentTarget.style.background = "#2e7d32"}
         >
-          Design Plang Bisa Diunduh di Sini
+          Desain Plang Bisa Diunduh di Sini
         </button>
       </div>
     </div>
@@ -382,7 +383,8 @@ export default function EcoBrickPlang() {
     <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 18px" }}>
       <div style={{ textAlign: "center", marginTop: 24, marginBottom: 40 }}>
         <Link
-          to="/kegiatan"
+            to="/kegiatan"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           style={{
             display: "inline-block",
             background: "#4169E1",
@@ -397,7 +399,6 @@ export default function EcoBrickPlang() {
             border: "none",
             cursor: "pointer"
           }}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           onMouseEnter={e => e.currentTarget.style.background = "#00008B"}
           onMouseLeave={e => e.currentTarget.style.background = "#4169E1"}
         >

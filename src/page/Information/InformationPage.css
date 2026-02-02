@@ -1072,3 +1072,49 @@ section {
   color: #4a5e4b;
   line-height: 1.6;
 }
+
+
+.hero-badge {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    rgba(46, 125, 50, 0.15) 0%,
+    rgba(56, 142, 60, 0.12) 100%
+  );
+  border: 1px solid rgba(46, 125, 50, 0.25);
+  padding: 0.25rem 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #2e7d32;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  position: relative;
+  clip-path: polygon(
+    0 50%,
+    6px 0,
+    calc(100% - 6px) 0,
+    100% 50%,
+    calc(100% - 6px) 100%,
+    6px 100%
+  );
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-badge {
+    font-size: 0.65rem;
+    padding: 0.18rem 0.85rem;
+    letter-spacing: 0.8px;
+  }
+}

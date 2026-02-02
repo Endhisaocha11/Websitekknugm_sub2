@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './Carousel.css';
 import sampahImg from '/sampah/sampah.jpg';
-import pengelolaanImg from '/sampah/Pengelolaan-Limbah-Sampah.jpg';
+import fotobersama from '/fotobersama.jpeg';
+import sunset from '/sampahsunset.jpeg';
 
 function CarouselSampah() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,10 +13,19 @@ function CarouselSampah() {
   // Array gambar sampah
   const images = [
     {
-      src: pengelolaanImg,
+      src: sampahImg,
+      title: 'Daur Ulang Sampah',
+      description : 'Mengubah sampah menjadi bahan yang berguna kembali.'
     },
     {
-      src: sampahImg,
+      src: fotobersama,
+      title : 'Sosialiasi Pengelolaan Sampah',
+      description : 'Meningkatkan kesadaran masyarakat tentang pengelolaan sampah.'
+    },
+    {
+      src: sunset,
+      title: 'Gunung Sampah',
+      description : 'Menggambarkan tantangan besar dalam pengelolaan sampah.'
     }
   ];
 
@@ -103,17 +113,17 @@ function CarouselSampah() {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {images.map((image, index) => (
-            <div key={index} className="carousel-slide">
+            <div className="carousel-slide">
               <img 
                 src={image.src} 
-                // alt={image.title}
+                alt={image.title}
                 className="carousel-image"
                 loading={index === 0 ? 'eager' : 'lazy'}
               />
-              {/* <div className="carousel-caption">
+              <div className="carousel-caption">
                 <h3>{image.title}</h3>
                 <p>{image.description}</p>
-              </div> */}
+              </div>
             </div>
           ))}
         </div>

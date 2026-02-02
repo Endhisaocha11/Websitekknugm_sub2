@@ -28,7 +28,7 @@ const kegiatanData = [
     id: 3,
     image: "/sampah/poc.png",
     icon: "🧪",
-    title: "Pengelolaan POC",
+    title: "Pembuatan POC",
     desc: "Pengolahan sampah organik menjadi Pupuk Organik Cair (POC) yang bermanfaat untuk kesuburan tanaman",
     color: "#f59e0b",
     link: "/pengelolaanpoc",
@@ -88,7 +88,7 @@ const HeroSection = () => {
   return (
     <section id="hero" className="kegiatan-hero-section">
       <div className={`kegiatan-hero-content ${visible ? "visible" : ""}`}>
-        <div className="kegiatan-hero-badge">
+        <div className="hero-badge">
           <span>🌍 Program & Kegiatan</span>
         </div>
 
@@ -119,7 +119,7 @@ const KegiatanSection = () => {
     >
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">✨ Kegiatan Kami</div>
+          <div className="hero-badge">✨ Kegiatan Kami</div>
           <h2 className="section-title">Program Pengelolaan Sampah Terpadu</h2>
           <p className="section-desc">
             Eksplorasi berbagai kegiatan dan program yang telah kami
