@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './Carousel.css';
-import sampahImg from '../../assets/img/sampah/sampah.jpg';
-import pengelolaanImg from '../../assets/img/sampah/Pengelolaan-Limbah-Sampah.jpg';
+import sampahImg from '/sampah/sampah.jpg';
+import pengelolaanImg from '/sampah/Pengelolaan-Limbah-Sampah.jpg';
 
 function CarouselSampah() {
   const [currentIndex, setCurrentIndex] = useState(0);

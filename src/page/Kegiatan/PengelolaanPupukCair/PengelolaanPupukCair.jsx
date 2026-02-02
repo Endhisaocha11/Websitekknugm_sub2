@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const imgPOC = "/src/assets/img/sampah/poc.png";
-const Alatdanbahan = "/src/assets/img/sampah/alatdanbahanpoc.jpeg";
+const imgPOC = "/sampah/poc.png";
+const Alatdanbahan = "/sampah/alatdanbahanpoc.jpeg";
 
 const LeafIcon = () => (
   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2e7d32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -465,35 +465,32 @@ export default function POCPage() {
         </div>
       </div>
 
-      <div className="cta-buttons" style={{ textAlign: "center", marginTop: "24px" }}>
+      <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 18px" }}>
+      <div style={{ textAlign: "center", marginTop: 24, marginBottom: 40 }}>
         <Link
           to="/kegiatan"
-          className="btn btn-primary btn-large"
           style={{
             display: "inline-block",
-            background: "#2e7d32",
+            background: "#4169E1",
             color: "#fff",
-            fontSize: "16px",
-            fontWeight: "600",
+            fontSize: 15,
+            fontWeight: 700,
             padding: "12px 24px",
-            borderRadius: "8px",
+            borderRadius: 8,
             textDecoration: "none",
-            boxShadow: "0 4px 12px rgba(46,125,50,0.3)",
-            transition: "background 0.3s, transform 0.2s",
+            boxShadow: "0 4px 12px rgba(65,105,225,0.3)",
+            transition: "background 0.3s",
+            border: "none",
+            cursor: "pointer"
           }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = "#1b5e20";
-            e.currentTarget.style.transform = "translateY(-2px)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "#2e7d32";
-            e.currentTarget.style.transform = "translateY(0)";
-          }}
+          onMouseEnter={e => e.currentTarget.style.background = "#00008B"}
+          onMouseLeave={e => e.currentTarget.style.background = "#4169E1"}
         >
-          <span>🏠 Kembali ke Program</span>
+          🏠 Kembali ke Program
         </Link>
       </div>
+    </div>
 
       {/* ═══════════ FOOTER ═══════════ */}
       <div style={{ maxWidth: 680, margin: "40px auto 0", padding: "24px 18px 36px", textAlign: "center", borderTop: "1px solid #c8e6c9" }}>

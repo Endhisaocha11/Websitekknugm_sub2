@@ -324,7 +324,7 @@ const PDFSection = () => {
         <div className="pdf-wrapper">
           <div className="pdf-frame-container">
             <iframe
-              src="/src/assets/bookletsampah.pdf" // Ensure the correct file path
+              src="/bookletsampah.pdf" // Ensure the correct file path
               type="application/pdf"
               className="pdf-iframe"
               title="Booklet Pengelolaan Sampah"
@@ -333,10 +333,10 @@ const PDFSection = () => {
           </div>
 
           <div className="pdf-actions">
-            <a href="/src/assets/bookletsampah.pdf" download="BookletPengelolaanSampah.pdf" className="btn btn-primary btn-large">
+            <a href="/bookletsampah.pdf" download="BookletPengelolaanSampah.pdf" className="btn btn-primary btn-large">
               <span>⬇️ Unduh PDF</span>
             </a>
-            <a href="/src/assets/bookletsampah.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            <a href="/bookletsampah.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
               <span>🔗 Buka di Tab Baru</span>
             </a>
           </div>

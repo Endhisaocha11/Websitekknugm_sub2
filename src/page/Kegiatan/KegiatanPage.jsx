@@ -8,7 +8,7 @@ import "./KegiatanPage.css";
 const kegiatanData = [
   {
     id: 1,
-    image: "/src/assets/img/sampah/desainplang2.jpg",
+    image: "/sampah/desainplang2.jpg",
     icon: "🪧",
     title: "Desain Plang",
     desc: "Pembuatan dan pemasangan plang informasi pengelolaan sampah untuk meningkatkan kesadaran masyarakat di lingkungan sekitar",
@@ -17,7 +17,7 @@ const kegiatanData = [
   },
   {
     id: 2,
-    image: "/src/assets/Hidroponik.png",
+    image: "/Hidroponik.png",
     icon: "🌱",
     title: "Hidroponik",
     desc: "Pemanfaatan sistem hidroponik sebagai solusi pertanian berkelanjutan dengan memanfaatkan air dan nutrisi secara efisien",
@@ -26,7 +26,7 @@ const kegiatanData = [
   },
   {
     id: 3,
-    image: "/src/assets/img/sampah/poc.png",
+    image: "/sampah/poc.png",
     icon: "🧪",
     title: "Pengelolaan POC",
     desc: "Pengolahan sampah organik menjadi Pupuk Organik Cair (POC) yang bermanfaat untuk kesuburan tanaman",
@@ -35,7 +35,7 @@ const kegiatanData = [
   },
   {
     id: 4,
-    image: "/src/assets/img/sampah/PenguranganPlastik.png",
+    image: "/sampah/PenguranganPlastik.png",
     icon: "♻️",
     title: "Pengurangan Plastik",
     desc: "Kampanye dan aksi nyata pengurangan penggunaan plastik sekali pakai untuk lingkungan yang lebih bersih",
@@ -44,7 +44,7 @@ const kegiatanData = [
   },
   {
     id: 5,
-    image: "/src/assets/data-sampah.jpg",
+    image: "/sampah/data-sampah.jpg",
     icon: "📊",
     title: "Data Pengeluaran Sampah",
     desc: "Monitoring dan pencatatan data pengeluaran sampah untuk evaluasi dan peningkatan sistem pengelolaan sampah",

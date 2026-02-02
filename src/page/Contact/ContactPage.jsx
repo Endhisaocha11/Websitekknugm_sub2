@@ -20,7 +20,7 @@ const ContactPage = () => {
     
     // Kirim via WhatsApp
     const waNumber = "6285647606527";
-    const waMessage = `*Pesan dari Website KKN*\n\nNama: ${formData.name}\nEmail: ${formData.email}\n\nPesan:\n${formData.message}`;
+    const waMessage = `*Pesan dari Website KKN*\n\nNama: ${formData.name}\nSubjek: ${formData.subjek}\n\nPesan:\n${formData.message}`;
     const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
     
     window.open(waUrl, '_blank');
@@ -140,8 +140,8 @@ const ContactPage = () => {
                 </div>
                 <div className="info-text">
                   <h3>Email</h3>
-                  <a href="mailto:memayuningdlingo2025@email.com">
-                    memayuningdlingo2025@email.com
+                  <a href="mailto:memayuningdlingo2025@gmail.com">
+                    memayuningdlingo2025@gmail.com
                   </a>
                 </div>
               </div>
@@ -183,7 +183,7 @@ const ContactPage = () => {
                     </svg>
                   </a>
                   <a
-                    href="mailto:memayuningdlingo2025@email.com"
+                    href="mailto:memayuningdlingo2025@gmail.com"
                     className="social-btn email"
                     aria-label="Email"
                   >

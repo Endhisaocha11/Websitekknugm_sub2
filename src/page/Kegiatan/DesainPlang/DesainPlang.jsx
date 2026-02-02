@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
-const imgDesain2 = "/src/assets/img/sampah/desainplang2.jpg";
+const imgDesain2 = "/sampah/desainplang2.jpg";
 
 const SDGIcon = ({ number, color }) => (
   <svg viewBox="0 0 40 40" width="40" height="40">
@@ -88,7 +88,7 @@ export default function EcoBrickPlang() {
           {/* PDF Viewer */}
           <div style={{ background: "#f5f5f5", borderRadius: 12, overflow: "hidden", marginBottom: 16, border: "1px solid #e0e0e0" }}>
             <iframe
-              src="/src/assets/PosterEcobrick.pdf"
+              src="/PosterEcobrick.pdf"
               type="application/pdf"
               style={{ width: "100%", height: 500, border: "none", display: "block" }}
               title="Poster Design Plang Ecobrick"
@@ -98,7 +98,7 @@ export default function EcoBrickPlang() {
           {/* Action Buttons */}
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <a 
-              href="/src/assets/PosterEcobrick.pdf" 
+              href="/PosterEcobrick.pdf" 
               download="PosterEcobrick.pdf" 
               style={{ flex: "1 1 200px", background: "#2e7d32", color: "#fff", fontSize: 14, fontWeight: 600, padding: "12px 20px", borderRadius: 10, textDecoration: "none", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, boxShadow: "0 2px 8px rgba(46,125,50,0.25)", transition: "background 0.3s" }}
               onMouseEnter={e => e.currentTarget.style.background = "#1b5e20"}
@@ -108,7 +108,7 @@ export default function EcoBrickPlang() {
               <span>Unduh PDF</span>
             </a>
             <a 
-              href="/src/assets/PosterEcobrick.pdf" 
+              href="/PosterEcobrick.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
               style={{ flex: "1 1 200px", background: "#fff", color: "#2e7d32", fontSize: 14, fontWeight: 600, padding: "12px 20px", borderRadius: 10, textDecoration: "none", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, border: "2px solid #2e7d32", transition: "all 0.3s" }}
@@ -346,50 +346,65 @@ export default function EcoBrickPlang() {
 
       {/* ═══════════ PENUTUP ═══════════ */}
       <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px" }}>
-        <div style={{ background: "linear-gradient(135deg, #1b5e20, #2e7d32)", borderRadius: 18, padding: 26, color: "#fff" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-            <span style={{ fontSize: 22 }}>📝</span>
-            <h2 style={{ margin: 0, fontSize: 17, fontWeight: 700 }}>Penutup</h2>
-          </div>
-          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#c8e6c9" }}>
-            Program ini bertujuan memanfaatkan sampah botol plastik menjadi plang nama desa yang ramah lingkungan dan bernilai edukatif. Diharapkan program ini dapat meningkatkan kepedulian masyarakat terhadap pengelolaan sampah serta mendukung terciptanya lingkungan desa yang bersih dan berkelanjutan.
-          </p>
+      <div style={{ background: "linear-gradient(135deg, #1b5e20, #2e7d32)", borderRadius: 18, padding: 26, color: "#fff" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+          <span style={{ fontSize: 22 }}>📝</span>
+          <h2 style={{ margin: 0, fontSize: 17, fontWeight: 700 }}>Penutup</h2>
         </div>
-
-        <div style={{ textAlign: "center", marginTop: 24, marginBottom: 40 }}>
-          <button
-            onClick={() => window.open("https://drive.google.com/drive/folders/1HaKzY2pmOjHT3Dp05V_ZbVQJNXn4ov4T", "_blank")}
-            style={{ background: "#2e7d32", color: "#fff", fontSize: 15, fontWeight: 700, padding: "12px 24px", borderRadius: 8, border: "none", cursor: "pointer", boxShadow: "0 4px 12px rgba(46,125,50,0.3)", transition: "background 0.3s" }}
-            onMouseEnter={e => e.currentTarget.style.background = "#1B5E20"}
-            onMouseLeave={e => e.currentTarget.style.background = "#2e7d32"}
-          >
-            Design Plang Bisa Diunduh di Sini
-          </button>
-        </div>
+        <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#c8e6c9" }}>
+          Program ini bertujuan memanfaatkan sampah botol plastik menjadi plang nama desa yang ramah lingkungan dan bernilai edukatif. Diharapkan program ini dapat meningkatkan kepedulian masyarakat terhadap pengelolaan sampah serta mendukung terciptanya lingkungan desa yang bersih dan berkelanjutan.
+        </p>
       </div>
-      <div className="cta-buttons" style={{ textAlign: "center", marginTop: "24px" }}>
+
+      <div style={{ textAlign: "center", marginTop: 24, marginBottom: 40 }}>
+        <button
+          onClick={() => window.open("https://drive.google.com/drive/folders/1HaKzY2pmOjHT3Dp05V_ZbVQJNXn4ov4T", "_blank")}
+          style={{ 
+            background: "#2e7d32", 
+            color: "#fff", 
+            fontSize: 15, 
+            fontWeight: 700, 
+            padding: "12px 24px", 
+            borderRadius: 8, 
+            border: "none", 
+            cursor: "pointer", 
+            boxShadow: "0 4px 12px rgba(46,125,50,0.3)", 
+            transition: "background 0.3s" 
+          }}
+          onMouseEnter={e => e.currentTarget.style.background = "#1B5E20"}
+          onMouseLeave={e => e.currentTarget.style.background = "#2e7d32"}
+        >
+          Design Plang Bisa Diunduh di Sini
+        </button>
+      </div>
+    </div>
+
+    <div style={{ maxWidth: 680, margin: "0 auto", padding: "0 18px" }}>
+      <div style={{ textAlign: "center", marginTop: 24, marginBottom: 40 }}>
         <Link
           to="/kegiatan"
-          className="btn btn-primary btn-large"
           style={{
             display: "inline-block",
             background: "#4169E1",
             color: "#fff",
-            fontSize: "16px",
-            fontWeight: "600",
+            fontSize: 15,
+            fontWeight: 700,
             padding: "12px 24px",
-            borderRadius: "8px",
+            borderRadius: 8,
             textDecoration: "none",
-            boxShadow: "0 4px 12px rgba(46,125,50,0.3)",
-            transition: "background 0.3s, transform 0.2s",
+            boxShadow: "0 4px 12px rgba(65,105,225,0.3)",
+            transition: "background 0.3s",
+            border: "none",
+            cursor: "pointer"
           }}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} // Scroll to the top
-            onMouseEnter={e => e.currentTarget.style.background = "#00008B"}
-            onMouseLeave={e => e.currentTarget.style.background = "#4169E1"}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onMouseEnter={e => e.currentTarget.style.background = "#00008B"}
+          onMouseLeave={e => e.currentTarget.style.background = "#4169E1"}
         >
-          <span>🏠 Kembali ke Program</span>
+          🏠 Kembali ke Program
         </Link>
       </div>
+    </div>
 
       {/* ═══════════ FOOTER ═══════════ */}
       <div style={{ maxWidth: 680, margin: "40px auto 0", padding: "24px 18px 36px", textAlign: "center", borderTop: "1px solid #c8e6c9" }}>
