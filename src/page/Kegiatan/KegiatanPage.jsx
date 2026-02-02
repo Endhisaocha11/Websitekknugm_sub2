@@ -199,7 +199,7 @@ const CTASection = () => {
           <div className="cta-buttons">
             <Link
               to="/"
-              className="btn btn-primary"
+              className="btn btn-secondary"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} // Scroll to the top
             >
               <span>🏠 Kembali ke Beranda</span>
