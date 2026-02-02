@@ -536,12 +536,14 @@ const CTASection = () => {
             <Link
               to="/kegiatan"
               className="btn btn-info"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               🌱 Lihat Program Kami
             </Link>
             <Link
               to="/"
               className="btn btn-secondary"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               🏠 Kembali ke Beranda
             </Link>
@@ -550,6 +552,7 @@ const CTASection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-link"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               📂 Lihat Sumber Artikel
             </a>
