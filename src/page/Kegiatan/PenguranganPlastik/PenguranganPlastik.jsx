@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const imgPenguranganSampah = "/sampah/PenguranganPlastik.png";
-const pdfByeByePlastics = "/byebyeplastics.pdf";
 
 const LeafIcon = () => (
   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2e7d32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -257,7 +256,7 @@ export default function PengurangansampahPage() {
           <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: 12, background: "#000",marginBottom: 6 }}>
             <iframe
               src={youtubeVideoUrl}
-              title="Tutorial POC"
+              title="Sosialisasi Pengurangan Plastik Sekali Pakai"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -283,10 +282,16 @@ export default function PengurangansampahPage() {
               <span>byebyeplasticbags.org</span>
             </a>
             <a href="https://www.instagram.com/byebyeplasticbagsjogja" target="_blank" rel="noopener noreferrer" style={{ color: "#a5d6a7", textDecoration: "none", fontSize: 14, display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ fontSize: 16 }}>📸</span>
+              <span style={{ display: "flex", alignItems: "center" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a5d6a7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="5" />
+                  <circle cx="17.5" cy="6.5" r="1.5" fill="#a5d6a7" stroke="none" />
+                </svg>
+              </span>
               <span>@byebyeplasticbagsjogja</span>
             </a>
-            <a href={pdfByeByePlastics} target="_blank" rel="noopener noreferrer" style={{ background: "rgba(255,255,255,0.15)", color: "#fff", padding: "10px 16px", borderRadius: 12, textDecoration: "none", fontSize: 13.5, fontWeight: 600, display: "inline-flex", alignItems: "center", gap: 8, marginTop: 6, border: "1px solid rgba(255,255,255,0.25)", width: "fit-content" }}>
+            <a href="https://drive.google.com/file/d/1z00nWf1MVinmzFkIx2FhQpJlsVsStsz7/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ background: "rgba(255,255,255,0.15)", color: "#fff", padding: "10px 16px", borderRadius: 12, textDecoration: "none", fontSize: 13.5, fontWeight: 600, display: "inline-flex", alignItems: "center", gap: 8, marginTop: 6, border: "1px solid rgba(255,255,255,0.25)", width: "fit-content" }}>
               <span style={{ fontSize: 18 }}>📄</span>
               <span>Download Materi Lengkap (PDF)</span>
             </a>

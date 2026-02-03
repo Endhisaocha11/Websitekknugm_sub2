@@ -227,7 +227,7 @@ export default function HidroponikPage() {
           <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: 12, background: "#000" }}>
             <iframe
               src={youtubeVideoUrl}
-              title="Tutorial Hidroponik"
+              title="Kegiatan Sosialiasi Pembuatan Hidroponik"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

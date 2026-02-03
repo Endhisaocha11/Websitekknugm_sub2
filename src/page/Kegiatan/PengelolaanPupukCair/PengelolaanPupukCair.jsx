@@ -321,7 +321,7 @@ export default function POCPage() {
           <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: 12, background: "#000" }}>
             <iframe
               src={youtubeVideoUrl}
-              title="Tutorial POC"
+              title="Kegiatan Pembuatan POC"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
