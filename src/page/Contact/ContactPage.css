@@ -1024,9 +1024,9 @@
 }
 
 /* ==================== DARK MODE SUPPORT ==================== */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: light) {
   /* Optional: Add dark mode styles if needed */
-  .contact-page {
+/* .contact-page {
     background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
   }
 
@@ -1042,8 +1042,8 @@
         rgba(59, 130, 246, 0.15) 0%,
         transparent 50%
       );
-  }
-}
+  } */
+/* } */
 
 /* ==================== PRINT STYLES ==================== */
 @media print {
