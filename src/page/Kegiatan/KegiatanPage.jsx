@@ -42,19 +42,19 @@ const kegiatanData = [
     color: "#8b5cf6",
     link: "/penguranganplastik",
   },
-  {
-    id: 5,
-    image: "/sampah/data-sampah.jpg",
-    icon: "📊",
-    title: "Data Pengeluaran Sampah",
-    desc: "Monitoring dan pencatatan data pengeluaran sampah untuk evaluasi dan peningkatan sistem pengelolaan sampah",
-    color: "#ef4444",
-    link: "/datapengeluaransampah",
-  },
+  // {
+  //   id: 5,
+  //   image: "/sampah/data-sampah.jpg",
+  //   icon: "📊",
+  //   title: "Data Pengeluaran Sampah",
+  //   desc: "Monitoring dan pencatatan data pengeluaran sampah untuk evaluasi dan peningkatan sistem pengelolaan sampah",
+  //   color: "#ef4444",
+  //   link: "/datapengeluaransampah",
+  // },
 ];
 
 /* ───────────────────────────────────────────
-   CUSTOM HOOK – Intersection Observer
+   CUSTOM HOOK – Intersection Observers
 ─────────────────────────────────────────── */
 function useInView(threshold = 0.15) {
   const ref = useRef(null);

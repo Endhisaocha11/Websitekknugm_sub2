@@ -126,8 +126,8 @@ const ContactPage = () => {
                 </div>
                 <div className="info-text">
                   <h3>WhatsApp</h3>
-                  <a href="https://wa.me/6285647606527" target="_blank" rel="noopener noreferrer">
-                    +62 856-4760-6527
+                  <a href="https://wa.me/62895423105050" target="_blank" rel="noopener noreferrer">
+                    +62 895-4231-05050
                   </a>
                 </div>
               </div>
@@ -150,7 +150,7 @@ const ContactPage = () => {
                 <h3>Ikuti Kami</h3>
                 <div className="social-buttons">
                   <a
-                    href="https://wa.me/6285647606527"
+                    href="https://wa.me/62895423105050"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-btn whatsapp"

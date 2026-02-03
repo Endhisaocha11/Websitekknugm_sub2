@@ -14,6 +14,8 @@ const LeafIcon = () => (
 export default function PengurangansampahPage() {
   const [lightboxImg, setLightboxImg] = useState(null);
 
+  const youtubeVideoUrl = "https://www.youtube.com/embed/GbPf6r32uwQ?si=0QLv2dzs9UpBJKNS?autoplay=1";
+
   const dampakPlastik = [
     { icon: "🌊", text: "Mencemari sungai dan laut", color: "#42a5f5" },
     { icon: "🐢", text: "Membahayakan satwa liar", color: "#66bb6a" },
@@ -237,6 +239,31 @@ export default function PengurangansampahPage() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* ═══════════ VIDEO ═══════════ */}
+      <div style={{ maxWidth: 680, margin: "32px auto 0", padding: "0 18px" }}>
+        <Divider label="Video Kegiatan" />
+        <div style={{ background: "#fff", borderRadius: 18, padding: 24, marginTop: 16, boxShadow: "0 2px 14px rgba(46,125,50,0.09)", border: "1px solid #e0f2e0" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+            <span style={{ fontSize: 22 }}>🎥</span>
+            <h2 style={{ margin: 0, fontSize: 17, color: "#1b5e20", fontWeight: 700 }}>Video Kegiatan Pengurangan Plastik Sekali Pakai</h2>
+          </div>
+          <p style={{ margin: "0 0 16px", fontSize: 13.5, color: "#5a6b5b", lineHeight: 1.6 }}>
+            Tonton video kegiatan sosialisasi pengurangan penggunaan plastik sekali pakai bersama siswa-siswi di SD Banyuurip.
+          </p>
+          {/* YouTube Video Embed - AUTOPLAY */}
+          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: 12, background: "#000",marginBottom: 6 }}>
+            <iframe
+              src={youtubeVideoUrl}
+              title="Tutorial POC"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", borderRadius: 12 }}
+            />
+          </div>
         </div>
       </div>
 

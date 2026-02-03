@@ -88,7 +88,7 @@ const FooterComponent = () => {
                 </a>
                 {/* WhatsApp */}
                 <a 
-                  href="https://wa.me/6285647606527" 
+                  href="https://wa.me/62895423105050" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="social-link"
@@ -127,7 +127,7 @@ const FooterComponent = () => {
 
             {/* Copyright */}
             <div className="footer-bottom">
-              <p>&copy; 2026 KKN-PPM UGM Sub-Unit 2 Desa Banyuurip. All rights reserved.</p>
+              <p>&copy; 2026 KKN-PPM UGM Sub-Unit 2 Dusun Banyuurip. All rights reserved.</p>
             </div>
           </div>
         </div>
